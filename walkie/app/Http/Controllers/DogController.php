@@ -26,8 +26,8 @@ class DogController extends Controller
     {
         $breeds = \App\Breed::pluck('name', 'id');
 
-        return view('create_dog/create_dog', compact(['breeds']));
-        return view('create_dog.create_dog');
+        return view('create_dog/create_dog', ['breeds' => $breeds]);
+        // return view('create_dog.create_dog');
     }
 
     /**

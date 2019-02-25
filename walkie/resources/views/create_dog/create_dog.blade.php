@@ -1,4 +1,4 @@
-
+{{-- 
 {!! Form::open(['url' => '/', 'method' => 'post']) !!}
 
 <div class="form-group">
@@ -23,5 +23,43 @@
     {{ Form::submit('Create!', ['class' => 'btn btn-success']) }}
     </div>
     {!! Form::close() !!}
-</div>
+</div> --}}
 
+<div class="container">
+    <form method="post" action="/">
+        @csrf
+              <h2>Add a dog</h2>
+              </div>
+              <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" name="name" id="name" placeholder="name" value="{{ old('name') }}">
+              </div>
+              <div class="form-group">
+                  <label for="age">Age:</label>
+              <input type="number" class="form-control" name="age" placeholder="age" value="" >
+              </div>
+              <div class="form-group">
+                  <label for="sex">Sex:</label>
+                <select name="sex" id="sex">
+                    <option value="0">Male</option>
+                    <option value="1">Female</option>
+                </select>
+              </div>
+              <div class="form-group">
+                    <label for="breed_id">Breed:</label>
+                    <select class="form-control" name="breed_id">
+                            @foreach($breeds as $breed)
+                              <option value="{{ $breed->id}}"> {{ $breed->name}} </option>
+                            @endforeach
+                          </select>
+                        </div>
+                </div>
+              <div class="form-group">
+                  <label for="description">Description: </label>
+                    <textarea class="form-control" name="description" id="" rows="3"> {{old('description')}} </textarea>
+                </div>
+
+              <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+
+          </form>
+</div>
