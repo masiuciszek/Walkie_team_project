@@ -10,7 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/{path?}', function () {
-    return view('welcome');
+Route::get('/dog-create', function () 
+{
+    return view('/create_dog/create_dog');
 });
+// Route::get('/{path?}', function () {
+//     return view('welcome');
+// });
