@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
 
-            $table->boolean('admin');
+            $table->boolean('admin')->default(false);
 
             $table->string('phone_number', 30)->nullable();
             $table->integer('age')->nullable();

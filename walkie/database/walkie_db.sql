@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 24, 2019 at 01:14 PM
+-- Generation Time: Feb 25, 2019 at 06:12 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.1.26
 
@@ -25,13 +25,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admins`
+-- Table structure for table `applications`
 --
 
-CREATE TABLE `admins` (
+CREATE TABLE `applications` (
   `id` int(10) UNSIGNED NOT NULL,
-  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dog_id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `accepted_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -39,20 +40,13 @@ CREATE TABLE `admins` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `clients`
+-- Table structure for table `breeds`
 --
 
-CREATE TABLE `clients` (
+CREATE TABLE `breeds` (
   `id` int(10) UNSIGNED NOT NULL,
-  `client_id` int(10) UNSIGNED NOT NULL,
-  `username` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `first_name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `last_name` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone_number` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `age` int(11) NOT NULL,
-  `password` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dog_id` int(10) UNSIGNED NOT NULL,
+  `breed` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -65,12 +59,13 @@ CREATE TABLE `clients` (
 
 CREATE TABLE `dogs` (
   `id` int(10) UNSIGNED NOT NULL,
-  `dog_id` int(10) UNSIGNED NOT NULL,
+  `breed_id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `breed` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `age` int(11) NOT NULL,
-  `sex` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sex` tinyint(1) NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `adopted_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -92,11 +87,11 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(9, '2014_10_12_000000_create_users_table', 1),
-(10, '2014_10_12_100000_create_password_resets_table', 1),
-(11, '2019_02_24_115542_create_dogs_table', 1),
-(12, '2019_02_24_115631_create_clients_table', 1),
-(13, '2019_02_24_115640_create_admins_table', 1);
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2019_02_24_115542_create_dogs_table', 1),
+(4, '2019_02_25_140218_create_applications_table', 1),
+(5, '2019_02_25_140233_create_breeds_table', 1);
 
 -- --------------------------------------------------------
 
@@ -118,11 +113,16 @@ CREATE TABLE `password_resets` (
 
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `first_name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `admin` tinyint(1) NOT NULL DEFAULT '0',
+  `phone_number` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `gender` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -132,15 +132,15 @@ CREATE TABLE `users` (
 --
 
 --
--- Indexes for table `admins`
+-- Indexes for table `applications`
 --
-ALTER TABLE `admins`
+ALTER TABLE `applications`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `clients`
+-- Indexes for table `breeds`
 --
-ALTER TABLE `clients`
+ALTER TABLE `breeds`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -173,15 +173,15 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `admins`
+-- AUTO_INCREMENT for table `applications`
 --
-ALTER TABLE `admins`
+ALTER TABLE `applications`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `clients`
+-- AUTO_INCREMENT for table `breeds`
 --
-ALTER TABLE `clients`
+ALTER TABLE `breeds`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
@@ -194,7 +194,7 @@ ALTER TABLE `dogs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`

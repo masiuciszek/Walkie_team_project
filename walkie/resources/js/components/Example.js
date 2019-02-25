@@ -11,7 +11,7 @@ export default class Example extends Component {
                             <div className="card-header">Example Component</div>
 
                             <div className="card-body">
-                                <h1>Hello</h1>
+                                <h1>Czesasdf asdfc</h1>
                             </div>
                         </div>
                     </div>
