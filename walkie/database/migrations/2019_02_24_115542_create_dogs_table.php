@@ -19,8 +19,9 @@ class CreateDogsTable extends Migration
             $table->string('name');
             $table->string('breed');
             $table->integer('age');
-            $table->string('sex');
+            $table->boolean('sex');
             $table->text('description');
+            $table->string('image');
             $table->timestamps();
         });
     }
