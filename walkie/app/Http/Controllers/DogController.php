@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Breed;
 use App\Dog;
 
 class DogController extends Controller
@@ -24,7 +25,7 @@ class DogController extends Controller
      */
     public function create()
     {
-        $breeds = \App\Breed::pluck('name', 'id');
+        $breeds = Breed::all();
 
         return view('create_dog/create_dog', ['breeds' => $breeds]);
         // return view('create_dog.create_dog');

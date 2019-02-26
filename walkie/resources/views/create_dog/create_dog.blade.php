@@ -26,7 +26,7 @@
 </div> --}}
 
 <div class="container">
-    <form method="post" action="/">
+    <form method="post" action="">
         @csrf
               <h2>Add a dog</h2>
               </div>
