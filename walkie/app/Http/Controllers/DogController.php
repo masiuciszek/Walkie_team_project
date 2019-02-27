@@ -15,7 +15,7 @@ class DogController extends Controller
      */
     public function index()
     {
-        //
+        //displays gallery of the dogs 
     }
 
     /**
@@ -63,7 +63,7 @@ class DogController extends Controller
      */
     public function show($id)
     {
-        //
+        //detail of the dog
     }
 
     /**
@@ -74,7 +74,7 @@ class DogController extends Controller
      */
     public function edit($id)
     {
-        //
+        //edit
     }
 
     /**

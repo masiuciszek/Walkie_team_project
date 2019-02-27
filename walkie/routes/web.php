@@ -18,8 +18,17 @@
     // return view('/create_dog/create_dog', compact(['breeds']));
 // });
 
-    Route::resource('/walkie', 'DogController');
+//Kuba:
+Route::get('/', function(){
+    return view('homepage');
+});
 
+//Marta:
+Route::resource('/dog', 'DogController');
+
+
+//Auth:
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+
