@@ -4,17 +4,18 @@
 @section('content')
 
 <div class="container">
-    <form method="post" action="{{ action('DogController@store') }}">
+    <form method="post" action="{{ action('DogController@update', $dog->id) }}">
         @csrf
-              <h2>Add a dog</h2>
+        {{ method_field('PUT')}}
+              <h2>Edit a dog</h2>
               </div>
               <div class="form-group">
                   <label for="name">Name:</label>
-                  <input type="text" class="form-control" name="name" id="name" placeholder="name" value="{{ old('name') }}">
+                  <input type="text" class="form-control" name="name" id="name" placeholder="name" value="{{ old('name', $dog->name) }}">
               </div>
               <div class="form-group">
                   <label for="age">Age:</label>
-              <input type="number" class="form-control" name="age" placeholder="age" value="" >
+              <input type="number" class="form-control" name="age" placeholder="age" value="{{ old('age', $dog->age) }}" >
               </div>
               <div class="form-group">
                   <label for="sex">Sex:</label>
@@ -27,34 +28,23 @@
                     <label for="breed_id">Breed:</label>
                     <select class="form-control" name="breed_id">
                             @foreach($breeds as $breed)
-                              <option value="{{ $breed->id}}"> {{ $breed->name}} </option>
+                              <option value="{{ $breed->id}}"> {{ old('breed_id', $breed->name) }}</option>
                             @endforeach
                           </select>
                         </div>
                 </div>
               <div class="form-group">
                   <label for="description">Description: </label>
-                    <textarea class="form-control" name="description" id="" rows="3"> {{old('description')}} </textarea>
-                </div>
-                <div class="form-group">
-                  <label for="image">Image:</label>
-                      <input type="text" name="image" class="form-control" value="{{ old('image') }}">
-              </div>
+                    <textarea class="form-control" name="description" id="" rows="3"> {{ old('description', $dog->description) }} </textarea>
+            </div>
+            <div class="form-group">
+                <label for="image">Image:</label>
+                    <input type="text" name="image" class="form-control" value="{{ old('image', $dog->image) }}">
+            </div>
 
               <button type="submit" name="submit" class="btn btn-primary">Submit</button>
 
           </form>
 </div>
-<br>
-<div>
-<h2>List of all the dogs:</h2>
-<ol>
-  @foreach ($dogs as $dog)
-<li>Name: {{ $dog->name }}, age: {{ $dog->age }}, sex: {{ $dog->sex}}, breed: {{$dog->breed->name}}
-  <button><a href="{{ action('DogController@edit', $dog->id)}}">EDIT</a></button>
-  <button><a href="{{ action('DogController@destroy', $dog->id)}}">DELETE</a></button>
-</li>  
-  @endforeach
-</ol>
-</div>
+
 @endsection

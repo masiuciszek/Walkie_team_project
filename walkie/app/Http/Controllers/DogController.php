@@ -8,95 +8,74 @@ use App\Dog;
 
 class DogController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
+    }
+    
     public function index()
     {
-        //displays gallery of the dogs 
+        $dogs = Dog::all();
+        
+        return view('/dogs/index', compact(['dogs']));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
+        $dogs = Dog::all();
         $breeds = Breed::all();
 
-        return view('create_dog/create_dog', ['breeds' => $breeds]);
-        // return view('create_dog.create_dog');
+        return view('dogs/create_dog', compact(['dogs', 'breeds']));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
+        //NIE WIEM O CO CHODZI ALE JAK TO JEST NIEWYKOMENTOWANE TO NIC Z DODAWANIA PSA NIE DZIALA
+        // $attributes = request()->validate([
+        //     'breed_id' => 'required',
+        //     'name' => ['required', 'min:2', 'max:50'],
+        //     'age' => 'required',
+        //     'sex' => 'required',
+        //     'description' => ['required', 'min:10', 'max:255'],
+        // ]);
 
-        $attributes = request()->validate([
-            'breed_id' => 'required',
-            'name' => ['required', 'min:2', 'max:50'],
-            'age' => 'required',
-            'sex' => 'required',
-            'description' => ['required', 'min:10', 'max:255'],
-        ]);
+        // $attributes['breed_id'] = auth()->id();
+        // Dog::create($attributes);
+        $dogs = Dog::create($request->all());
 
-        $attributes['breed_id'] = auth()->id();
-        Dog::create($attributes);
-
-        return redirect('/walkie');
+        return redirect(action('DogController@index'));
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
-        //detail of the dog
+        $dog = Dog::findOrFail($id);
+
+        return view('/dogs/show', compact('dog'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //edit
+        $dog = Dog::findOrFail($id);
+        $breeds = Breed::get();
+        // dd($dog);
+        // dd($id);
+        return view('/dogs/edit', compact(['dog', 'breeds']));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $dog = Dog::find($id);
+        $dog = $dog->update($request->all());
+
+        return redirect(action('DogController@index'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $dog = Dog::findOrFail($id);
+        $dog->delete();
+        return redirect('/dogs');
     }
 }

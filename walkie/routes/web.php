@@ -24,7 +24,8 @@ Route::get('/', function(){
 });
 
 //Marta:
-Route::resource('/dog', 'DogController');
+Route::resource('/dogs', 'DogController');
+
 
 
 //Auth:
