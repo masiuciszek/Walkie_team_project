@@ -14,7 +14,6 @@ class Dog extends Model
         'breed_id',
         'description',
         'image'
-
     ];
 
     public function breed()
