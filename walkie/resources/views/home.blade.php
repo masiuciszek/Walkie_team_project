@@ -13,8 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                        <p class="lead">welcome </p>
 
-                    You are logged in!
+                    <a href="{{url('/user')}}" class="btn btn-info">To the page</a>
                 </div>
             </div>
         </div>

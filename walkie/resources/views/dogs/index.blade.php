@@ -6,6 +6,7 @@
 
 @foreach ($dogs as $dog)
 
+
 <img src="{{ $dog->image }}" alt="title"/>
 <br>
 <h2>Name: {{ $dog->name }}</h2>

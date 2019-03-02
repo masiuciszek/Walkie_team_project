@@ -18,15 +18,20 @@ class DogController extends Controller
         $dogs = Dog::all();
        
         // dd($dogs);
+        // foreach ($dogs as $dog) {
+        //     dd($dog->breed()->get());
+        // }
         return view('/dogs/index', compact(['dogs']));
     }
 
     public function create()
     {
+        $dogs = Dog::all();
         $dog = new Dog;
-        $breeds = Breed::pluck('name', 'id');
+        // $breeds = Breed::pluck('name', 'id');
+        $breeds = Breed::all();
 
-        return view('dogs/create_dog', compact(['dog', 'breeds']));
+        return view('dogs/create_dog', compact(['dog', 'breeds', 'dogs']));
     }
 
     protected function validateSave() 
@@ -64,7 +69,8 @@ class DogController extends Controller
     public function edit($id)
     {
         $dog = Dog::findOrFail($id);
-        $breeds = Breed::pluck('name', 'id');
+        $breeds = Breed::get();
+        // $breeds = Breed::pluck('name', 'id');
         // dd($dog);
         // dd($id);
         return view('/dogs/edit', compact(['dog', 'breeds']));

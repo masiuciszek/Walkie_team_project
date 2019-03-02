@@ -28,7 +28,7 @@
                     <label for="breed_id">Breed:</label>
                     <select class="form-control" name="breed_id">
                             @foreach($breeds as $breed)
-                              <option value="{{ $breed->id}}"> {{ old('breed_id', $breed->name) }}</option>
+                              <option value="{{ $breed->id }}"> {{ $breed->name }}</option>
                             @endforeach
                           </select>
                         </div>
