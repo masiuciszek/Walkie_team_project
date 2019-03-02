@@ -25,7 +25,7 @@ Route::get('/', function(){
 
 //Marta:
 Route::resource('/dog', 'DogController');
-Route::resource('/user', 'UserController');
+Route::resource('/user', 'UserController')->except(['create','store']);
 
 
 //Auth:

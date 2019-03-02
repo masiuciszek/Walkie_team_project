@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class UserController extends Controller
 {
@@ -18,7 +20,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('user.index');
+        $user = User::all();
+        $auth = Auth::user();
+        return view('user.index', compact('user', 'auth'));
     }
 
     /**
@@ -28,7 +32,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -50,7 +54,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $auth = Auth::user();
+        $user = User::findOrFail($id);
+        return view('user.show', compact(['auth', 'user']));
     }
 
     /**
@@ -61,7 +67,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $auth = Auth::user();
+        $user = User::findOrFail($id);
+        return view('user.edit', compact(['auth', 'user']));
     }
 
     /**
@@ -73,7 +81,10 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user = $user->update($request->all());
+
+        return redirect(action('UserController@index'));
     }
 
     /**
@@ -84,6 +95,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect(action('UserController@index'));
     }
 }
