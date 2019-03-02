@@ -53,6 +53,7 @@ class DogController extends Controller
         // $attributes['breed_id'] = auth()->id();
         // Dog::create($attributes);
         $dog = Dog::create($request->all());
+        $dog->save();
 
         return redirect(action('DogController@index'));
 
