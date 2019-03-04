@@ -17,21 +17,17 @@ class DogController extends Controller
     {
         $dogs = Dog::all();
        
-        // dd($dogs);
-        // foreach ($dogs as $dog) {
-        //     dd($dog->breed()->get());
-        // }
         return view('/dogs/index', compact(['dogs']));
     }
 
     public function create()
     {
         $dogs = Dog::all();
-        $dog = new Dog;
+        // $dog = new Dog;
         // $breeds = Breed::pluck('name', 'id');
         $breeds = Breed::all();
 
-        return view('dogs/create_dog', compact(['dog', 'breeds', 'dogs']));
+        return view('dogs/create_dog', compact(['breeds', 'dogs']));
     }
 
     protected function validateSave() 
@@ -48,11 +44,18 @@ class DogController extends Controller
     public function store(Request $request)
     {
         //NIE WIEM O CO CHODZI ALE JAK TO JEST NIEWYKOMENTOWANE TO NIC Z DODAWANIA PSA NIE DZIALA
-        $this->validateSave();
+        // $this->validateSave();
 
         // $attributes['breed_id'] = auth()->id();
         // Dog::create($attributes);
-        $dog = Dog::create($request->all());
+        // $dog = Dog::create($request->all());
+        $dog = new Dog;
+        $dog->name = $request->name;
+        $dog->age = $request->age;
+        $dog->sex = $request->sex;
+        $dog->breed_id = $request->breed_id;
+        $dog->description = $request->description;
+        $dog->image = $request->image;
         $dog->save();
 
         return redirect(action('DogController@index'));
