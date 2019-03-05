@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
 <h1>DOGS</h1>
 <button><a href="{{ action('DogController@create')}}">ADD NEW DOG</a></button>
 <br>

@@ -44,7 +44,7 @@ class DogController extends Controller
     public function store(Request $request)
     {
         //NIE WIEM O CO CHODZI ALE JAK TO JEST NIEWYKOMENTOWANE TO NIC Z DODAWANIA PSA NIE DZIALA
-        // $this->validateSave();
+        $this->validateSave();
 
         // $attributes['breed_id'] = auth()->id();
         // Dog::create($attributes);
