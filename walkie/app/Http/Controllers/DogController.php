@@ -95,6 +95,6 @@ class DogController extends Controller
     {
         $dog = Dog::findOrFail($id);
         $dog->delete();
-        return redirect('DogController@index');
+        return redirect()->back();
     }
 }

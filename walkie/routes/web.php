@@ -25,9 +25,14 @@ Route::get('/', function(){
 
 //Marta:
 
-Route::resource('/dog', 'DogController');
-Route::resource('/user', 'UserController')->except(['create','store']);
+Route::group(['middleware' => ['can:admin']], function () {
 
+    Route::resource('/dog', 'DogController')->except(['index', 'show']);
+    Route::resource('/user', 'UserController')->except(['create','store']);
+
+});
+
+Route::resource('/dog', 'DogController')->only(['index', 'show']);
 
 //Auth:
 Auth::routes();

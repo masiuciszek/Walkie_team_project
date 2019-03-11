@@ -8,7 +8,12 @@
 <br>
 <h3>Age: {{ $dog->age }}</h2>
 <br>
-<h3>Sex: {{ $dog->sex }}</h2>
+@if($dog->sex === 0)
+
+    <h3>Sex: Male</h2>
+@else
+    <h3>Sex: Female</h3>
+@endif
 <br>
 <h3>Breed: {{ $dog->breed->name }}</h2>
 <br>

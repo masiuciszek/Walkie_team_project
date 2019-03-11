@@ -60,8 +60,13 @@
 <ol>
   @foreach ($dogs as $dog)
 <li>Name: {{ $dog->name }}, age: {{ $dog->age }}, sex: {{ $dog->sex}}, breed: {{$dog->breed->name}}
+  <br>
   <button><a href="{{ action('DogController@edit', $dog->id)}}">EDIT</a></button>
-  <button><a href="{{ action('DogController@destroy', $dog->id)}}">DELETE</a></button>
+<form action="{{ action('DogController@destroy', $dog->id)}}" method="POST">
+  @csrf
+  @method('DELETE')
+ <button>DELETE</button>
+</form> 
 </li>  
   @endforeach
 </ol>
