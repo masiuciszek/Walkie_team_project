@@ -113,6 +113,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'phone' => 'required',
+            'dog' => 'required',
             'message' => 'required'
         ]);
 
@@ -120,6 +121,7 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
+            'dog' => $request->dog,
             'message' => $request->message
         );
         Mail::to('walkie.mmk@hotmail.com')->send(new SendMail($data));

@@ -24,19 +24,23 @@
     @csrf
         <div class="form-group">
           <label>Your Name:</label>
-            <input type="text" name="name" class="form-control" />
+            <input type="text" name="name" class="form-control" value="{{old('name')}}"/>
         </div>
         <div class="form-group">
           <label>Your Email:</label>
-            <input type="text" name="email" class="form-control"  />
+            <input type="text" name="email" class="form-control" value="{{old('email')}}" />
         </div>
         <div class="form-group">
           <label>Your Phone Number:</label>
-            <input type="text" name="phone" class="form-control" />
+            <input type="text" name="phone" class="form-control" value="{{old('phone')}}" />
+        </div>
+        <div class="form-group">
+          <label>Name of the chosen dog:</label>
+            <input type="text" name="dog" class="form-control" value="{{old('dog')}}" />
         </div>
         <div class="form-group">
           <label>Why would you like to adops this dog?</label>
-            <textarea name="message" class="form-control"></textarea>
+            <textarea name="message" class="form-control">{{old('message')}}</textarea>
         </div>
         <div class="form-group">
           <input type="submit" name="send" class="btn btn-info" value="Send" />
