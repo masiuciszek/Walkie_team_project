@@ -1,0 +1,17 @@
+
+.main-header{
+    background: steelblue;
+    height: 100vh;
+
+    .main-nav{
+
+        ul{
+            display: flex;
+            li{
+                a{
+                    color: rgba(24, 24, 182, 0.575);
+                }
+            }
+        }
+    }
+}

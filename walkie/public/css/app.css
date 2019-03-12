@@ -1,5 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+.main-header {
+  background: steelblue;
+  height: 100vh;
+}
+
+.main-header .main-nav ul {
+  display: flex;
+}
+
+.main-header .main-nav ul li a {
+  color: rgba(24, 24, 182, 0.575);
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
