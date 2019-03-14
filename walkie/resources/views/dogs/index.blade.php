@@ -3,7 +3,6 @@
 @section('content')
 
 
-
 <h1>DOGS</h1>
 
 @can('admin')
@@ -33,7 +32,7 @@
  <h3>Breed: {{ $dog->breed->name }}</h2>
 <br>
 <h3>Description: {{ $dog->description }}</h2>
-    <button><a href="{{ action('DogController@show', $dog->id)}}">DETAILS</a></button> 
+    <button><a href="{{ action('DogController@show', $dog->id)}}">DETAILS</a></button>
     @can('admin')
     <button><a href="{{ action('DogController@edit', $dog->id)}}">EDIT</a></button>
     @endcan
@@ -41,4 +40,5 @@
 
 @endforeach
 
+<script src="/.js/index.js"></script
 @endsection
