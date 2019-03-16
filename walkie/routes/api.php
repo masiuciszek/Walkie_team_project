@@ -19,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::resource('/dog', 'Api\DogController');
-Route::resource('/admin', 'Api\AdminController');
+// Route::resource('/admin', 'Api\AdminController');
