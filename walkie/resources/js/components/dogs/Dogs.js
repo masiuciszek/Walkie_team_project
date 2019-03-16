@@ -48,7 +48,13 @@ class Dogs extends React.Component{
                 </Button>
 
                     <div className=" about">
-                        {this.content()}
+                    <div>
+                <img key={dog.id} src={`${dog.image}`} />
+                <h3> Name: {dog.name} </h3>
+                <h3> Age: {dog.age} </h3>
+                <h3>Sex: {dog.sex === 0 ? 'male' : 'female' } </h3>
+                <p>Breed: {dog.description}  </p>
+            </div>
                     </div>
             </div>
         )
