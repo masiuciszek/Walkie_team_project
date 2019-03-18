@@ -3,7 +3,6 @@
 @section('content')
 
 
-
 <h1>DOGS</h1>
 
 @can('admin')
@@ -42,6 +41,9 @@
 @endforeach
 <div id="wall-container">
 </div>
+
+
 <script src="{{ mix('js/list-of-dogs.js') }}"></script>
+
 
 @endsection
