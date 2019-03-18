@@ -33,12 +33,14 @@
  <h3>Breed: {{ $dog->breed->name }}</h2>
 <br>
 <h3>Description: {{ $dog->description }}</h2>
-    <button><a href="{{ action('DogController@show', $dog->id)}}">DETAILS</a></button> 
+    <button><a href="{{ action('DogController@show', $dog->id)}}">DETAILS</a></button>
     @can('admin')
     <button><a href="{{ action('DogController@edit', $dog->id)}}">EDIT</a></button>
     @endcan
 <hr>
 
 @endforeach
+
+<script src="{{ mix('js/list-of-dogs.js') }}"></script>
 
 @endsection
