@@ -40,7 +40,8 @@
 <hr>
 
 @endforeach
-
+<div id="wall-container">
+</div>
 <script src="{{ mix('js/list-of-dogs.js') }}"></script>
 
 @endsection
