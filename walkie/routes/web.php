@@ -33,7 +33,8 @@ Route::group(['middleware' => ['can:admin']], function () {
 });
 
 Route::resource('/dog', 'DogController')->only(['index', 'show']);
-
+Route::get('/contact', 'UserController@contact');
+Route::post('/contact', 'UserController@send');
 //Auth:
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

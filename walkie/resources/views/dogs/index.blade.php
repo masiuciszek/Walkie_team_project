@@ -40,5 +40,10 @@
 
 @endforeach
 
+<<<<<<< HEAD
 <script src="/.js/index.js"></script
+=======
+<script src="{{ mix('js/list-of-dogs.js') }}"></script>
+
+>>>>>>> master
 @endsection

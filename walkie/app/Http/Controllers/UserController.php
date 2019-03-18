@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMail;
 
 class UserController extends Controller
 {
@@ -98,5 +100,31 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
         return redirect(action('UserController@index'));
+    }
+
+    public function contact()
+    {
+        return view('user/contact');
+    }
+
+    public function send(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'dog' => 'required',
+            'message' => 'required'
+        ]);
+
+        $data = array(
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'dog' => $request->dog,
+            'message' => $request->message
+        );
+        Mail::to('walkie.mmk@hotmail.com')->send(new SendMail($data));
+        return back()->with('success', 'Thank you for contacting us!');
     }
 }
