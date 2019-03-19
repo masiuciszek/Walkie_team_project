@@ -21,4 +21,9 @@ class Dog extends Model
     {
         return $this->belongsTo('\App\Breed');
     }
+
+    public function users()
+    {
+        return $this->belongsToMany('\App\User', 'walks');
+    }
 }

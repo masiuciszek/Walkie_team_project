@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Breed;
 use App\Dog;
+use App\Walk;
 
 class DogController extends Controller
 {
@@ -63,9 +64,12 @@ class DogController extends Controller
     }
 
 
-    public function show($id)
+    public function show($id, Request $request)
     {
+        $date = $request->input('date', date('Y-m-d'));
+
         $dog = Dog::findOrFail($id);
+        $walks = Walk::where('dog_id', $dog->id)->day($date)->get();
 
         return view('/dogs/show', compact('dog'));
     }
