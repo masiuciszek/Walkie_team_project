@@ -1,4 +1,8 @@
-<!doctype html>
+
+@extends('layouts.app')
+<div id="home"></div>
+<script src="{{ mix('js/Home.js') }}"></script>
+{{-- <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -11,8 +15,7 @@
 
         <!-- Styles -->
     </head>
-    <body>
-        <div id="root"></div>
+    <body> --}}
 
-    </body>
-</html>
+    {{-- </body>
+</html> --}}
