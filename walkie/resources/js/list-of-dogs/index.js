@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Wall from './components/Wall'
+import Dogs from './components/Dogs';
 
-ReactDOM.render(<Wall />, document.getElementById('wall-container'));
+ReactDOM.render(<Dogs />, document.getElementById('dogs'));

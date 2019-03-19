@@ -1,3 +1,4 @@
+console.log('it works')
 import React from 'react';
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
@@ -47,15 +48,7 @@ class Dogs extends React.Component{
                         Add a Dog
                 </Button>
 
-                    <div className=" about">
-                    <div>
-                <img key={dog.id} src={`${dog.image}`} />
-                <h3> Name: {dog.name} </h3>
-                <h3> Age: {dog.age} </h3>
-                <h3>Sex: {dog.sex === 0 ? 'male' : 'female' } </h3>
-                <p>Breed: {dog.description}  </p>
-            </div>
-                    </div>
+                {this.content()}
             </div>
         )
     }
