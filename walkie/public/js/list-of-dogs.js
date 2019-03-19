@@ -26517,9 +26517,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -26533,15 +26533,16 @@ var Wall =
 function (_React$Component) {
   _inherits(Wall, _React$Component);
 
-  function Wall(props) {
+  function Wall() {
     var _this;
 
     _classCallCheck(this, Wall);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Wall).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Wall).call(this));
     _this.state = {
       dogs: []
     };
+    _this.content = _this.content.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -26550,20 +26551,35 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/dog').then(function (res) {
-        console.log(res);
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/dog').then(function (response) {
+        console.log(response.data);
 
         _this2.setState({
-          dogs: res.data
+          dogs: response.data
         });
+      }).catch(function (error) {
+        console.error(error);
       });
+    }
+  }, {
+    key: "content",
+    value: function content() {
+      var dogInfo = this.state.dogs.map(function (dog) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          key: dog.id,
+          src: "".concat(dog.image)
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " Name: ", dog.name, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " Age: ", dog.age, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Sex: ", dog.sex === 0 ? 'male' : 'female', " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Breed: ", dog.description, "  "));
+      });
+      return dogInfo;
     }
   }, {
     key: "render",
     value: function render() {
+      var content = this.content();
+      console.log(content);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "test"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "elko"));
+        className: "ui container"
+      }, this.content());
     }
   }]);
 
