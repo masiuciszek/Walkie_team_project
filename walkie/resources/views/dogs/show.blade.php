@@ -52,14 +52,25 @@
     </style>
     
     <h1>DATE PICKER</h1>
-    <label for="walking">Choose a date for your next walk</label>
-    <input type="date" name="walking" id="walking" onchange="reload_date(this.value)">
-
+   
+    <form action="{{ action('DogController@walk', $dog->id) }}" method="post">
+          @csrf   
+           <label for="walking">Choose a date for your next walk</label>
+    <input type="date" name="walking" id="walking" value="{{ $date }}" onchange="reload_date(this.value)">
+            <br>
+      
+            @foreach ([12, 14, 16, 18] as $hour)
+                @if (empty($hours_taken[$hour]))
+                    <button type="submit" class="btn-primary" name="hour" value="{{ $hour }}">{{ $hour }}:00</button>
+                @endif
+            @endforeach
+    
+     </form>
     <script>
      function reload_date($date) {
          console.log($date);
          window.location.href = '?date=' + $date;
      }
-
     </script>
 @endsection
+
