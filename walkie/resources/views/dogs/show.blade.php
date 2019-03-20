@@ -73,13 +73,13 @@
 
     <form action="{{ action('DogController@walk', $dog->id) }}" method="post">
           @csrf   
-          <input type="hidden" name="dog_id" value="{{ 1231322 }}">
+          <input type="hidden" name="dog_id" value="{{ $dog->id }}">
            <label for="walking">Choose a date for your next walk</label>
     <input type="date" name="walking" id="walking" value="{{ $date }}" onchange="reload_date(this.value)">
             <br>
       
             @foreach ($hours as $hour)
-                @if (1 || empty($hours_taken[$hour]))
+                @if (empty($hours_taken[$hour]))
                     <button type="submit" class="btn-primary" name="hour" value="{{ $hour }}">{{ $hour }}:00</button>
                 @endif
             @endforeach

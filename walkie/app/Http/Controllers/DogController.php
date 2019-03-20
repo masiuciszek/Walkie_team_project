@@ -111,6 +111,7 @@ class DogController extends Controller
 
     public function walk(Request $request, $dog_id)
     {
+        $dog = Dog::findOrFail($dog_id);
         $this->validate($request, [
             'dog_id' => 'required|exists:dogs,id',
             'hour' => [
@@ -126,7 +127,6 @@ class DogController extends Controller
                 'hour.unique' => 'This hours is already taken'
             ]);
 
-        // dd($request->input());
         $walk = new Walk;
         $walk->date = $request->input('walking');
         $walk->hour = $request->hour;
