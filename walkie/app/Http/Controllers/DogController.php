@@ -76,8 +76,9 @@ class DogController extends Controller
         foreach ($walks as $walk) {
             $hours_taken[$walk->hour] = true;
         }
+        $hours = Walk::getHoursForDay($date);
 
-        return view('/dogs/show', compact('dog', 'date', 'hours_taken'));
+        return view('/dogs/show', compact('dog', 'date', 'hours_taken', 'hours'));
     }
 
     public function edit($id)
@@ -110,24 +111,29 @@ class DogController extends Controller
 
     public function walk(Request $request, $dog_id)
     {
-        // $this->validate($request, [
-        //     'hour' => [
-        //         Rule::unique('walks')->where(function ($query) use ($dog_id, $request) {
-        //             return $query->where('dog_id', $dog_id)
-        //                 ->where('user_id', Auth::id())
-        //                 ->where('hour', $request->hour);
-        //         })
-        //     ]
-        // ]);
+        $this->validate($request, [
+            'dog_id' => 'required|exists:dogs,id',
+            'hour' => [
+                'required',
+                Rule::in(Walk::getHoursForDay($request->input('walking'))),
+                Rule::unique('walks')->where(function ($query) use ($dog_id, $request) {
+                    return $query->where('dog_id', $dog_id)
+                        ->where('user_id', Auth::id());
+                })
+            ]
+            ], [
+                'dog_id.exists' => 'The selected dog doesn\'t exist',
+                'hour.unique' => 'This hours is already taken'
+            ]);
 
         // dd($request->input());
         $walk = new Walk;
         $walk->date = $request->input('walking');
         $walk->hour = $request->hour;
-        $walk->dog_id = $dog_id;
+        $walk->dog_id = $request->dog_id;
         $walk->user_id = Auth::id();
         $walk->save();
-        return redirect(action('DogController@index'));
+        return redirect(action('DogController@show', $dog->id));
     }
 }
 

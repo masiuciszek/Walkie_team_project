@@ -11,4 +11,22 @@ class Walk extends Model
 
         return $query->where('date', '=', $date);
     }
+
+    public static function getHoursForDay($date)
+    {
+        $allHours = ['12', '14', '16', '18'];
+        if($date == date('Y-m-d')){
+            $allHours = array_filter($allHours, function($hour){
+                return $hour > date('G');
+            });
+        } elseif ($date < date('Y-m-d')){
+            return [];
+        }
+        return $allHours;
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

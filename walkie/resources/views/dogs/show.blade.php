@@ -53,14 +53,33 @@
     
     <h1>DATE PICKER</h1>
    
+    @if(count($errors) > 0)
+    <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+            <ul>
+     @foreach ($errors->all() as $error)
+      <li>{{ $error }}</li>
+     @endforeach
+            </ul>
+   </div>
+@endif
+
+@if ($message = Session::get('success'))
+   <div class="alert alert-success alert-block">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+           <strong>{{ $message }}</strong>
+   </div>
+@endif
+
     <form action="{{ action('DogController@walk', $dog->id) }}" method="post">
           @csrf   
+          <input type="hidden" name="dog_id" value="{{ 1231322 }}">
            <label for="walking">Choose a date for your next walk</label>
     <input type="date" name="walking" id="walking" value="{{ $date }}" onchange="reload_date(this.value)">
             <br>
       
-            @foreach ([12, 14, 16, 18] as $hour)
-                @if (empty($hours_taken[$hour]))
+            @foreach ($hours as $hour)
+                @if (1 || empty($hours_taken[$hour]))
                     <button type="submit" class="btn-primary" name="hour" value="{{ $hour }}">{{ $hour }}:00</button>
                 @endif
             @endforeach

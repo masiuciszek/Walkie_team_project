@@ -32,4 +32,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('\App\Dog', 'walks');
     }
+
+    public function walks()
+    {
+        return $this->hasMany('App\Walk');
+    }
 }
