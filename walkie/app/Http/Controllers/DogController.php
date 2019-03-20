@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Breed;
 use App\Dog;
+use App\Walk;
+use Auth;
+use Illuminate\Validation\Rule;
 
 class DogController extends Controller
 {
@@ -63,11 +66,19 @@ class DogController extends Controller
     }
 
 
-    public function show($id)
+    public function show($id, Request $request)
     {
-        $dog = Dog::findOrFail($id);
+        $date = $request->input('date', date('Y-m-d'));
 
-        return view('/dogs/show', compact('dog'));
+        $dog = Dog::findOrFail($id);
+        $walks = Walk::where('dog_id', $dog->id)->day($date)->get();
+        $hours_taken = [];
+        foreach ($walks as $walk) {
+            $hours_taken[$walk->hour] = true;
+        }
+        $hours = Walk::getHoursForDay($date);
+
+        return view('/dogs/show', compact('dog', 'date', 'hours_taken', 'hours'));
     }
 
     public function edit($id)
@@ -97,4 +108,32 @@ class DogController extends Controller
         $dog->delete();
         return redirect()->back();
     }
+
+    public function walk(Request $request, $dog_id)
+    {
+        $this->validate($request, [
+            'dog_id' => 'required|exists:dogs,id',
+            'hour' => [
+                'required',
+                Rule::in(Walk::getHoursForDay($request->input('walking'))),
+                Rule::unique('walks')->where(function ($query) use ($dog_id, $request) {
+                    return $query->where('dog_id', $dog_id)
+                        ->where('user_id', Auth::id());
+                })
+            ]
+            ], [
+                'dog_id.exists' => 'The selected dog doesn\'t exist',
+                'hour.unique' => 'This hours is already taken'
+            ]);
+
+        // dd($request->input());
+        $walk = new Walk;
+        $walk->date = $request->input('walking');
+        $walk->hour = $request->hour;
+        $walk->dog_id = $request->dog_id;
+        $walk->user_id = Auth::id();
+        $walk->save();
+        return redirect(action('DogController@show', $dog->id));
+    }
 }
+

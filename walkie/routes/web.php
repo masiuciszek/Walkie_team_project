@@ -33,6 +33,7 @@ Route::group(['middleware' => ['can:admin']], function () {
 });
 
 Route::resource('/dog', 'DogController')->only(['index', 'show']);
+Route::post('/dog/{id}', 'DogController@walk');
 Route::get('/contact', 'UserController@contact');
 Route::post('/contact', 'UserController@send');
 //Auth:
