@@ -12,13 +12,6 @@
     </div>
 <?php endif; ?>
 
-<style>
-    #dogs-card {
-        overflow: hidden;
-    }
-
-</style>
-
 <div class="container-fluid">
     <div class="row">
         
@@ -69,29 +62,6 @@
         
         <br>
 
-        <style>
-            .card {
-                overflow: auto;
-                height: 70vh;
-            }
-            .dogs-list-container {
-                padding-top: 1.8rem;
-            }
-
-            #btn-delete {
-                 border: 0px solid transparent;
-            }
-
-            .btn-container {
-                display: flex;
-                justify-content: flex-end;
-                margin-top: 1rem;
-            }
-
-            #btn-edit {
-                margin-right: 2rem;
-            }
-        </style>
         <div class="dogs-list-container col-md-5 ml-5">
             <h2 data-spy="scroll" >List of all the dogs:</h2>
             <div class="card">

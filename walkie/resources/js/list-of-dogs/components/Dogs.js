@@ -1,7 +1,7 @@
 console.log('it works')
 import React from 'react';
 import axios from 'axios';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 
 class Dogs extends React.Component{
     constructor(){
@@ -44,9 +44,9 @@ class Dogs extends React.Component{
         return(
             <div className="ui container">
                 {/* {this.state.dogs.map(dog => <p>{dog.name} </p>)} */}
-                <Button variant="contained" color="primary">
-                        Add a Dog
-                </Button>
+                {/* <Button variant="contained" color="primary"> */}
+                        {/* Add a Dog */}
+                {/* </Button> */}
 
                 {this.content()}
             </div>

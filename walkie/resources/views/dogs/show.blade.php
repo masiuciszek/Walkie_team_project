@@ -1,27 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
+    <div class="jumbotron">
+        <div class="text-center">
+            <img class="img-fluid dog-img rounded" src="{{ $dog->image }}" alt="dog-img"/>
+        </div>
+    <br>
+    <h2 class="dog-detail-name">Name: {{ $dog->name }}</h2>
+    <br>
+    <h4>Age: {{ $dog->age }}</h4>
+    <br>
+    @if($dog->sex === 0)
 
-<img src="{{ $dog->image }}" alt="dog-img"/>
-<br>
-<h2>Name: {{ $dog->name }}</h2>
-<br>
-<h3>Age: {{ $dog->age }}</h2>
-<br>
-@if($dog->sex === 0)
+        <h4>Sex: Male</h4>
+    @else
+        <h4>Sex: Female</h4>
+    @endif
+    <br>
+    <h4>Breed: {{ $dog->breed->name }}</h4>
+    <br>
+    <h4>Description: {{ $dog->description }}</h4>
+    <hr>
+    <button><a href="{{ action('DogController@index')}}">HOME</a></button>
 
-    <h3>Sex: Male</h2>
-@else
-    <h3>Sex: Female</h3>
-@endif
-<br>
-<h3>Breed: {{ $dog->breed->name }}</h2>
-<br>
-<h3>Description: {{ $dog->description }}</h2>
-<hr>
-<button><a href="{{ action('DogController@index')}}">HOME</a></button>
 
-<style>
+    </div>
+</div>
+{{-- <style>
     [type="date"] {
       background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
     }
@@ -49,7 +55,7 @@
       box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
       width: 190px;
     }
-    </style>
+    </style> --}}
     
     <h1>DATE PICKER</h1>
    

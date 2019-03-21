@@ -2,15 +2,8 @@
 
 @section('content')
 
-<style>
-    #user_info_container {
-        text-align: center;
-        width: 40vw;
-        
-    }
-</style>
 
-<h1>Welcome</h1>
+<h1 class="user-title">Welcome</h1>
     <div class="container">
         <div class="jumbotron" id="user_info_container">
             <div class="card">

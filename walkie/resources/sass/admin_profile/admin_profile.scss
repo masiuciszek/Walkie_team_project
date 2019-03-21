@@ -1,0 +1,21 @@
+#dogs-card {
+    overflow: hidden;
+}
+
+.card {
+    overflow: auto;
+    height: 70vh;
+}
+
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    #btn-delete {
+        border: 0px solid transparent;
+    }
+    #btn-edit {
+        margin-right: 2rem;
+    }
+}
