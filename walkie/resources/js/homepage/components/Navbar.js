@@ -23,16 +23,13 @@ export default class Example extends React.Component {
       <div>
         <Navbar color="info" dark>
           <NavbarBrand href="/" className="mr-auto">{this.props.title}</NavbarBrand>
-          <Button color="light" href="/login" className="mx-3">{this.props.btn1}</Button>
-          <Button color="warning" href="/register">{this.props.btn2}</Button>
+          {this.props.module}
+          {this.props.module2}
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2 nav-hamburger" />
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
               <NavItem>
-                <NavLink>Login</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink> LogOut </NavLink>
+                <NavLink>{this.props.module}</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

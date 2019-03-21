@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button} from 'reactstrap';
 
-const Hero = ({hero,text,module}) => (
+const Hero = ({hero,text}) => (
 
             <div className="walkie text-center">
             <h1>{hero}</h1>
@@ -12,7 +12,7 @@ const Hero = ({hero,text,module}) => (
                 </i>
                 </Button>
                 </a>
-                {module}
+
         </div>
     );
 
