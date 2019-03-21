@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
+use App\Dog;
 
 class UserController extends Controller
 {
@@ -106,7 +107,8 @@ class UserController extends Controller
 
     public function contact()
     {
-        return view('user/contact');
+        $dogs = Dog::all();
+        return view('user/contact', compact('dogs'));
     }
 
     public function send(Request $request)

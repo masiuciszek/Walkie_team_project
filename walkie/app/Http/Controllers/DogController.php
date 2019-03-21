@@ -124,7 +124,7 @@ class DogController extends Controller
             ]
             ], [
                 'dog_id.exists' => 'The selected dog doesn\'t exist',
-                'hour.unique' => 'This hours is already taken'
+                'hour.unique' => 'This hour is already taken'
             ]);
 
         $walk = new Walk;

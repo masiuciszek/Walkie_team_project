@@ -24,23 +24,27 @@
     @csrf
         <div class="form-group">
           <label>Your Name:</label>
-            <input type="text" name="name" class="form-control" value="{{old('name')}}"/>
+          <input type="text" name="name" class="form-control" value="{{old('name')}}"/>
         </div>
         <div class="form-group">
           <label>Your Email:</label>
-            <input type="text" name="email" class="form-control" value="{{old('email')}}" />
+          <input type="text" name="email" class="form-control" value="{{old('email')}}" />
         </div>
         <div class="form-group">
           <label>Your Phone Number:</label>
-            <input type="text" name="phone" class="form-control" value="{{old('phone')}}" />
+          <input type="text" name="phone" class="form-control" value="{{old('phone')}}" />
         </div>
         <div class="form-group">
           <label>Name of the chosen dog:</label>
-            <input type="text" name="dog" class="form-control" value="{{old('dog')}}" />
-        </div>
+          <select class="form-control" name="dog">
+              @foreach($dogs as $dog)
+                  <option value="{{ $dog->name}}"> {{ $dog->name}} </option>
+              @endforeach
+          </select>
+      </div>
         <div class="form-group">
-          <label>Why would you like to adops this dog?</label>
-            <textarea name="message" class="form-control">{{old('message')}}</textarea>
+          <label>Why would you like to adopt this dog?</label>
+          <textarea name="message" class="form-control">{{old('message')}}</textarea>
         </div>
         <div class="form-group">
           <input type="submit" name="send" class="btn btn-info" value="Send" />
