@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Button } from 'reactstrap';
-import './nav.css'
+
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -21,10 +21,10 @@ export default class Example extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="dark" dark>
+        <Navbar color="info" dark>
           <NavbarBrand href="/" className="mr-auto">{this.props.title}</NavbarBrand>
-          <Button color="info" className="mx-3">{this.props.btn1}</Button>
-          <Button color="danger">{this.props.btn2}</Button>
+          <Button color="light" href="/login" className="mx-3">{this.props.btn1}</Button>
+          <Button color="warning" href="/register">{this.props.btn2}</Button>
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2 nav-hamburger" />
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
