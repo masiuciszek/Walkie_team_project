@@ -1,0 +1,13 @@
+
+
+  #container-contact {
+    width: 60vw;
+    margin-top: 2rem; 
+    @media (max-width: 768px) { 
+        width: 100vw;
+        margin-top: 2rem;
+       }
+    .contact-title {
+        text-align: center;
+    }
+  }
