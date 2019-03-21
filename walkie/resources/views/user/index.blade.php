@@ -19,6 +19,25 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="jumbotron" id="user_info_container">
+            <div class="card">
+                <div class="card-body">
+                        <h2>Previous Walks:</h2>
+                        @foreach ($prevWalks as $walk)
+                <p> {{ $walk->date}} - {{ $walk->hour}}:00 with {{ $walk->dog->name}}</p>
+                        @endforeach
+
+
+                        <h2> Next Walks:</h2>
+                        @foreach ($nextWalks as $walk)
+                            <p> {{ $walk->date}} - {{ $walk->hour}}:00 with {{ $walk->dog->name}}</p>
+                        @endforeach
+                
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 @endsection

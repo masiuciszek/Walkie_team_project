@@ -29,4 +29,8 @@ class Walk extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function dog(){
+        return $this->belongsTo('App\Dog');
+    }
 }

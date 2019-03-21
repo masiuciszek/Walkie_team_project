@@ -22,9 +22,17 @@ class UserController extends Controller
      */
     public function index()
     {
+        $date = date('Y-m-d');
+        $hour = date('H');
+
+        $prevWalks = Auth::user()->walks()->whereRaw('(`date` < ? or ( `date` = ? and `hour` <= ? ))', [$date, $date, $hour])->orderBy('date')->orderBy('hour')->get();
+        $nextWalks = Auth::user()->walks()->whereRaw('(`date` > ? or ( `date` = ? and `hour` > ? ))', [$date, $date, $hour])->orderBy('date')->orderBy('hour')->get();
+        
+
+
         $user = User::all();
         $auth = Auth::user();
-        return view('user.index', compact('user', 'auth'));
+        return view('user.index', compact('user', 'auth', 'prevWalks', 'nextWalks'));
     }
 
     /**

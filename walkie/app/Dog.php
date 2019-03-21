@@ -26,4 +26,8 @@ class Dog extends Model
     {
         return $this->belongsToMany('\App\User', 'walks');
     }
+
+    public function walks(){
+        return $this->hasMany('App\Walk');
+    }
 }
