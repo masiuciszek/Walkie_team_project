@@ -76,7 +76,9 @@ class DogController extends Controller
         foreach ($walks as $walk) {
             $hours_taken[$walk->hour] = true;
         }
+
         $hours = Walk::getHoursForDay($date);
+    
 
         return view('/dogs/show', compact('dog', 'date', 'hours_taken', 'hours'));
     }
@@ -112,19 +114,22 @@ class DogController extends Controller
     public function walk(Request $request, $dog_id)
     {
         $dog = Dog::findOrFail($dog_id);
+
         $this->validate($request, [
             'dog_id' => 'required|exists:dogs,id',
             'hour' => [
                 'required',
                 Rule::in(Walk::getHoursForDay($request->input('walking'))),
                 Rule::unique('walks')->where(function ($query) use ($dog_id, $request) {
-                    return $query->where('dog_id', $dog_id)
-                        ->where('user_id', Auth::id());
+                    return $query
+                        ->where('hour', $request->hour)
+                        ->where('date', $request->walking)
+                        ->where('dog_id', $dog_id);
                 })
             ]
             ], [
                 'dog_id.exists' => 'The selected dog doesn\'t exist',
-                'hour.unique' => 'This hours is already taken'
+                'hour.unique' => 'This hour is already taken'
             ]);
 
         $walk = new Walk;
@@ -133,7 +138,9 @@ class DogController extends Controller
         $walk->dog_id = $request->dog_id;
         $walk->user_id = Auth::id();
         $walk->save();
-        return redirect(action('DogController@show', $dog->id));
+
+
+        return redirect(action('DogController@show', $dog->id))->with('success', 'Thank you! Information about your next walk are already in your profile!');
     }
 }
 
