@@ -8,6 +8,9 @@ use App\Dog;
 use App\Walk;
 use Auth;
 use Illuminate\Validation\Rule;
+use App\Review;
+use Illuminate\Support\Facades\Gate;
+
 
 class DogController extends Controller
 {
@@ -68,10 +71,16 @@ class DogController extends Controller
 
     public function show($id, Request $request)
     {
-        $date = $request->input('date', date('Y-m-d'));
 
+        $date = $request->input('date', date('Y-m-d'));
         $dog = Dog::findOrFail($id);
         $walks = Walk::where('dog_id', $dog->id)->day($date)->get();
+
+        if (Gate::allows('admin')){
+            $reviews = Review::where('dog_id', $dog->id)->get();
+        }else{
+            $reviews = Review::where('dog_id', $dog->id)->where('approved', true)->get();
+        }
         $hours_taken = [];
         foreach ($walks as $walk) {
             $hours_taken[$walk->hour] = true;
@@ -79,17 +88,13 @@ class DogController extends Controller
 
         $hours = Walk::getHoursForDay($date);
     
-
-        return view('/dogs/show', compact('dog', 'date', 'hours_taken', 'hours'));
+        return view('/dogs/show', compact('dog', 'date', 'hours_taken', 'hours', 'reviews'));
     }
 
     public function edit($id)
     {
         $dog = Dog::findOrFail($id);
         $breeds = Breed::get();
-        // $breeds = Breed::pluck('name', 'id');
-        // dd($dog);
-        // dd($id);
         return view('/dogs/edit', compact(['dog', 'breeds']));
     }
 
@@ -120,7 +125,8 @@ class DogController extends Controller
             'hour' => [
                 'required',
                 Rule::in(Walk::getHoursForDay($request->input('walking'))),
-                Rule::unique('walks')->where(function ($query) use ($dog_id, $request) {
+                Rule::unique('walks')
+                    ->where(function ($query) use ($dog_id, $request) {
                     return $query
                         ->where('hour', $request->hour)
                         ->where('date', $request->walking)

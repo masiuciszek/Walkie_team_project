@@ -34,6 +34,11 @@ Route::group(['middleware' => ['can:admin']], function () {
 
 Route::resource('/dog', 'DogController')->only(['index', 'show']);
 Route::post('/dog/{id}', 'DogController@walk');
+Route::post('/dog/{id}/review', 'ReviewController@store');
+Route::get('/dog/{id}', 'ReviewController@create');
+Route::delete('/review/{id}', 'ReviewController@destroy');
+Route::post('/review/{id}', 'ReviewController@vote');
+Route::post('/review/{id}/approved', 'ReviewController@approved');
 Route::get('/contact', 'UserController@contact');
 Route::post('/contact', 'UserController@send');
 //Auth:

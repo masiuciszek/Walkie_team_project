@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 11, 2019 at 04:47 PM
--- Server version: 5.7.24
--- PHP Version: 7.1.26
+-- Czas generowania: 22 Mar 2019, 10:58
+-- Wersja serwera: 5.7.24
+-- Wersja PHP: 7.1.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `walkie_db`
+-- Baza danych: `walkie_db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `applications`
+-- Struktura tabeli dla tabeli `applications`
 --
 
 CREATE TABLE `applications` (
@@ -40,7 +40,7 @@ CREATE TABLE `applications` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `breeds`
+-- Struktura tabeli dla tabeli `breeds`
 --
 
 CREATE TABLE `breeds` (
@@ -51,20 +51,20 @@ CREATE TABLE `breeds` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `breeds`
+-- Zrzut danych tabeli `breeds`
 --
 
 INSERT INTO `breeds` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'Boxer', '2019-02-25 13:29:39', '2019-02-25 13:29:39'),
-(2, 'French Bulldog', '2019-02-25 13:29:39', '2019-02-25 13:29:39'),
-(3, 'Yorkshire Terrier', '2019-02-25 13:29:39', '2019-02-25 13:29:39'),
-(4, 'Poodle', '2019-02-25 13:29:39', '2019-02-25 13:29:39'),
-(5, 'Kuvasz', '2019-02-25 13:29:39', '2019-02-25 13:29:39'),
-(6, 'Miniature Schnauzer', '2019-02-25 13:29:39', '2019-02-25 13:29:39'),
-(7, 'Wheaten Terrier', '2019-02-25 13:29:39', '2019-02-25 13:29:39'),
-(8, 'Pug', '2019-02-25 13:29:39', '2019-02-25 13:29:39'),
-(9, 'Pitbull', '2019-02-25 13:29:39', '2019-02-25 13:29:39'),
-(10, 'Border Terrier', '2019-02-25 13:29:39', '2019-02-25 13:29:39'),
+(1, 'Boxer', '2019-02-25 12:29:39', '2019-02-25 12:29:39'),
+(2, 'French Bulldog', '2019-02-25 12:29:39', '2019-02-25 12:29:39'),
+(3, 'Yorkshire Terrier', '2019-02-25 12:29:39', '2019-02-25 12:29:39'),
+(4, 'Poodle', '2019-02-25 12:29:39', '2019-02-25 12:29:39'),
+(5, 'Kuvasz', '2019-02-25 12:29:39', '2019-02-25 12:29:39'),
+(6, 'Miniature Schnauzer', '2019-02-25 12:29:39', '2019-02-25 12:29:39'),
+(7, 'Wheaten Terrier', '2019-02-25 12:29:39', '2019-02-25 12:29:39'),
+(8, 'Pug', '2019-02-25 12:29:39', '2019-02-25 12:29:39'),
+(9, 'Pitbull', '2019-02-25 12:29:39', '2019-02-25 12:29:39'),
+(10, 'Border Terrier', '2019-02-25 12:29:39', '2019-02-25 12:29:39'),
 (11, 'Alaskan Malamute ', NULL, NULL),
 (12, 'American Staffordshire Terrier', NULL, NULL),
 (13, 'Australian Shepherd', NULL, NULL),
@@ -171,7 +171,7 @@ INSERT INTO `breeds` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dogs`
+-- Struktura tabeli dla tabeli `dogs`
 --
 
 CREATE TABLE `dogs` (
@@ -188,11 +188,11 @@ CREATE TABLE `dogs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `dogs`
+-- Zrzut danych tabeli `dogs`
 --
 
 INSERT INTO `dogs` (`id`, `breed_id`, `name`, `age`, `sex`, `description`, `image`, `adopted_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Binki', 7, 0, 'Not the smartest one although he has gone through professional training and knows basic commands. Aggressive but ready to start a new life with family full of children. Binki is very active and athletic pup.', 'https://www.stockvault.net/data/2012/12/10/138879/preview16.jpg', NULL, NULL, '2019-03-11 14:20:41'),
+(1, 1, 'Binki', 7, 0, 'Not the smartest one although he has gone through professional training and knows basic commands. Aggressive but ready to start a new life with family full of children. Binki is very active and athletic pup.', 'https://www.stockvault.net/data/2012/12/10/138879/preview16.jpg', NULL, NULL, '2019-03-11 13:20:41'),
 (2, 3, 'Fiona', 8, 1, 'Fiona is looking for a quiet household with Adults only. Will also require to be the only dog in the household as she is quite nervous around dogs and doesn\'t really want to have to interact with them. Loves people and will need a little more help with her independence training.', 'https://image.freepik.com/free-photo/dog-lying-towel_1218-460.jpg', NULL, NULL, NULL),
 (3, 4, 'Abby', 1, 1, 'Abby is an active breed and needs lots of fun exciting things to keep her busy! Quick learner and loves a yummy treat for doing the right thing and he would love to continue learning using positive reinforcement training in his new home.', 'https://image.freepik.com/free-photo/looking-up-brown-cute-poodle-puppy-sitting-ground_8353-6012.jpg', NULL, NULL, NULL),
 (4, 9, 'Butters', 6, 0, 'Butter is looking for a family who can spend time with him to become more confident with handling and spending time alone. He may be suitable to live with another dog. Happy, short and stout good hearted pitbull', 'https://image.freepik.com/free-photo/pitbull-dog-staring-victim-with-determined-eye_39733-200.jpg', NULL, NULL, NULL),
@@ -225,7 +225,7 @@ INSERT INTO `dogs` (`id`, `breed_id`, `name`, `age`, `sex`, `description`, `imag
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Struktura tabeli dla tabeli `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -235,20 +235,23 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Zrzut danych tabeli `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2019_02_24_115542_create_dogs_table', 1),
-(4, '2019_02_25_140218_create_applications_table', 1),
-(5, '2019_02_25_140233_create_breeds_table', 1);
+(10, '2014_10_12_000000_create_users_table', 1),
+(11, '2014_10_12_100000_create_password_resets_table', 1),
+(12, '2019_02_24_115542_create_dogs_table', 1),
+(13, '2019_02_25_140218_create_applications_table', 1),
+(14, '2019_02_25_140233_create_breeds_table', 1),
+(15, '2019_03_19_141044_create_walks_table', 1),
+(16, '2019_03_21_141755_create_reviews_table', 1),
+(17, '2019_03_21_142610_create_votes_table', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Struktura tabeli dla tabeli `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -260,7 +263,33 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktura tabeli dla tabeli `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `dog_id` int(10) UNSIGNED NOT NULL,
+  `text` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `approved` tinyint(1) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Zrzut danych tabeli `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `user_id`, `dog_id`, `text`, `approved`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'qwertyuio', 0, '2019-03-22 08:16:34', '2019-03-22 08:16:34'),
+(2, 2, 1, 'zsxdcfvghjkl', 1, '2019-03-22 08:22:21', '2019-03-22 08:22:34'),
+(3, 2, 1, 'kotek', 0, '2019-03-22 08:29:16', '2019-03-22 08:29:16'),
+(4, 2, 1, 'edrftghjkl', 0, '2019-03-22 08:43:51', '2019-03-22 08:43:51');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `users`
 --
 
 CREATE TABLE `users` (
@@ -269,7 +298,7 @@ CREATE TABLE `users` (
   `last_name` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `admin` tinyint(1) NOT NULL DEFAULT '0',
@@ -281,49 +310,103 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Zrzut danych tabeli `users`
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `email_verified_at`, `user_name`, `password`, `remember_token`, `admin`, `phone_number`, `age`, `gender`, `created_at`, `updated_at`) VALUES
-(7, 'Kuba', 'Mas', 'mmm.dragan@gmail.com', NULL, 'binki', '$2y$10$u65/4vZvTORigk0ybJqB7.4yyc6pqYsJ1FWMX.rB1wBBcB8CFOa1.', 'JOYiK92En7E0qEp0ULMc6FuwnIBamFaeQ3zrloCpgeI7tRdSyU0xgz7y4xnB', 0, '66666666', 18, 'female', '2019-03-11 14:14:52', '2019-03-11 14:14:52'),
-(8, 'Artur', 'Boruc', 'walkie.mmk@hotmail.com', NULL, 'Admin', '$2y$10$556YGau.wko6dGYYGWuGxOQQX8x5D36yjgB8/vuTIrY6CobhO5aem', NULL, 1, '66666666', 18, 'female', '2019-03-11 14:31:06', '2019-03-11 14:31:06');
+(1, 'Artur', 'Boruc', 'walkie.mmk@hotmail.com', NULL, 'Admin', '$2y$10$HWnsshPNTDGlE.8rkgNIHeSllN77.KOMe6J5r8EilaYCuTCPLCFoS', NULL, 1, '66666666', 18, 'female', '2019-03-22 08:14:17', '2019-03-22 08:14:17'),
+(2, 'Marta', 'Mas', 'kkk@gmail.com', NULL, 'marti', '$2y$10$Nw2jr9gYj2EkJY1qwEaefu4pX4EFrKTCh3W88QlehzA0ff.DuYImO', NULL, 0, '66666666', 18, 'female', '2019-03-22 08:22:03', '2019-03-22 08:22:03');
+
+-- --------------------------------------------------------
 
 --
--- Indexes for dumped tables
+-- Struktura tabeli dla tabeli `votes`
+--
+
+CREATE TABLE `votes` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `review_id` int(10) UNSIGNED NOT NULL,
+  `vote` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Zrzut danych tabeli `votes`
+--
+
+INSERT INTO `votes` (`id`, `user_id`, `review_id`, `vote`, `created_at`, `updated_at`) VALUES
+(1, 2, 2, 1, '2019-03-22 08:55:07', '2019-03-22 08:55:07'),
+(2, 2, 2, 0, '2019-03-22 08:55:10', '2019-03-22 08:55:10');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `walks`
+--
+
+CREATE TABLE `walks` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `dog_id` int(10) UNSIGNED NOT NULL,
+  `date` date NOT NULL,
+  `hour` tinyint(4) NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Zrzut danych tabeli `walks`
+--
+
+INSERT INTO `walks` (`id`, `dog_id`, `date`, `hour`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 1, '2019-03-22', 14, 1, '2019-03-22 08:15:15', '2019-03-22 08:15:15'),
+(2, 1, '2019-03-22', 12, 2, '2019-03-22 08:22:15', '2019-03-22 08:22:15'),
+(3, 1, '2019-03-22', 18, 2, '2019-03-22 08:43:40', '2019-03-22 08:43:40');
+
+--
+-- Indeksy dla zrzutów tabel
 --
 
 --
--- Indexes for table `applications`
+-- Indeksy dla tabeli `applications`
 --
 ALTER TABLE `applications`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `breeds`
+-- Indeksy dla tabeli `breeds`
 --
 ALTER TABLE `breeds`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `dogs`
+-- Indeksy dla tabeli `dogs`
 --
 ALTER TABLE `dogs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migrations`
+-- Indeksy dla tabeli `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_resets`
+-- Indeksy dla tabeli `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `users`
+-- Indeksy dla tabeli `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeksy dla tabeli `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -331,38 +414,69 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_user_name_unique` (`user_name`);
 
 --
+-- Indeksy dla tabeli `votes`
+--
+ALTER TABLE `votes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeksy dla tabeli `walks`
+--
+ALTER TABLE `walks`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `walks_dog_id_date_hour_unique` (`dog_id`,`date`,`hour`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `applications`
+-- AUTO_INCREMENT dla tabeli `applications`
 --
 ALTER TABLE `applications`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `breeds`
+-- AUTO_INCREMENT dla tabeli `breeds`
 --
 ALTER TABLE `breeds`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
--- AUTO_INCREMENT for table `dogs`
+-- AUTO_INCREMENT dla tabeli `dogs`
 --
 ALTER TABLE `dogs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT dla tabeli `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT dla tabeli `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT dla tabeli `votes`
+--
+ALTER TABLE `votes`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT dla tabeli `walks`
+--
+ALTER TABLE `walks`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
