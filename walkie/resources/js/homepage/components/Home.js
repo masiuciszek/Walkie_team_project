@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Navbar from './Navbar';
 import Hero from './Hero';
-import Module from './Module';
-import Module2 from './Module2';
+import Model1 from './Model1';
+import Model2 from './Model2';
 import {Button, Col, Container, Row } from 'reactstrap';
 import './home.css'
 
@@ -15,14 +15,14 @@ export default class Home extends Component {
           btn1="Login"
           btn2="Register"
             module={
-            <Module
+            <Model1
             buttonLabel="login"
             login="login"
             cancel="cancel"
             />
             }
             module2={
-              <Module2
+              <Model2
               buttonLabel="register"
               register="register"
               cancel="cancel"
