@@ -3,7 +3,6 @@ import React from 'react';
 import axios from 'axios';
 import { Container, Row, Col, Button } from 'reactstrap';
 
-
 class Dogs extends React.Component{
     constructor(){
         super()
@@ -46,7 +45,17 @@ class Dogs extends React.Component{
         return dogInfo;
     }
     render(){
+        return(
+            <div>
+                <Container>
+                <Row>
 
+                {this.content()}
+
+                </Row>
+                </Container>
+            </div>
+        )
     }
 }
 

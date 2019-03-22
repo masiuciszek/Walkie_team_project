@@ -1,16 +1,6 @@
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "/js/list-of-dogs.js": "/js/list-of-dogs.js?id=52736b2dc05c1cea3e12",
-    "/css/app.css": "/css/app.css?id=4b28377338c4853ed591",
-    "/js/modals.js": "/js/modals.js?id=af7c79d387c3d7023524"
-=======
-=======
->>>>>>> feat/dev
     "/js/Home.js": "/js/Home.js?id=b6fede2e347e15497231",
-    "/js/Navbar.js": "/js/Navbar.js?id=0765c212e77b5bb22394",
     "/js/list-of-dogs.js": "/js/list-of-dogs.js?id=10c851627455b67c55ec",
-    "/css/app.css": "/css/app.css?id=8681063aecb58232dd47",
+    "/css/app.css": "/css/app.css?id=4b28377338c4853ed591",
     "/js/modals.js": "/js/modals.js?id=bb7dba265bc4bee35e5c"
->>>>>>> feat/dev
 }
