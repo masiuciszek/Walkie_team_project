@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<div id="navbar"></div>
 
 @section('content')
     <div class="container">
@@ -9,3 +10,4 @@
     </div>
 @endsection
 
+<script src="{{ mix('js/Header.js') }}"></script>

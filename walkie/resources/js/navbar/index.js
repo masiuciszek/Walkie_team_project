@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MainNavbar from './components/Navbar';
+import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.css';
 
 
-ReactDOM.render(<MainNavbar />, document.getElementById('navbar'));
+ReactDOM.render(<Header />, document.getElementById('navbar'));

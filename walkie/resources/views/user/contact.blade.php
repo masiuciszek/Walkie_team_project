@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<div id="navbar"></div>
 @section('content')
 
 @if(count($errors) > 0)
@@ -57,3 +57,4 @@
     </div>
   </div>
    @endsection
+   <script src="{{ mix('js/Header.js') }}"></script>
