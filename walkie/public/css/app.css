@@ -31,12 +31,15 @@
 
 .user-title {
   text-align: center;
-  margin: 2rem 0 5rem 0;
+  margin: 5rem 0 5rem 0;
 }
 
 #user_info_container {
   text-align: center;
-  width: 40vw;
+}
+
+#user-info-card {
+  margin-top: 30%;
 }
 
 #dogs-card {
@@ -88,12 +91,6 @@
 }
 
 /* custom styles */
-
-body {
-  padding: 4em;
-  background: #e5e5e5;
-  font: 13px/1.4 Geneva, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
-}
 
 label {
   display: block;
