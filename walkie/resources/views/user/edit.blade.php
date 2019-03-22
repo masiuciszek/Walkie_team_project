@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<div id="navbar"></div>
 
 @section('content')
 <div class="container">
@@ -99,40 +100,4 @@
 
 
 
-
-
-{{-- @extends('layouts.app')
-
-
-@section('content')
-
-    <div class="container">
-    <h2 class="display-3"> {{$auth->first_name}}  {{$auth->last_name}} </h2>
-
-    <form method="post" action="/user/{{$user->id}}">
-        @csrf
-        @method('PATCH')
-
-        <div class="form-group">
-          <label for="first_name">First Name</label>
-          <input type="text" name="first_name" class="form-control" id="first_name"  placeholder="{{$auth->first_name}} ">
-        </div>
-
-        <div class="form-group">
-          <label for="last_name">Last Name</label>
-          <input type="text" name="last_name" class="form-control" id="last_name"  placeholder="{{$auth->last_name}} ">
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="text" name="Email" class="form-control" id="email"  placeholder="{{$auth->email}}">
-        </div>
-
-        <button type="submit" class="btn btn-info">update</button>
-      </form>
-    </div>
-
-
-
-    @endsection
-
- --}}
+<script src="{{ mix('js/Header.js') }}"></script>

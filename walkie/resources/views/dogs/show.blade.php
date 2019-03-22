@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<div id="navbar"></div>
 
 @section('content')
 
@@ -27,7 +28,7 @@
             <h4>Description: {{ $dog->description }}</h4>
             <hr>
             <button><a href="{{ action('DogController@index')}}">HOME</a></button>
-            
+
             <h2 class="date-detail">DATE PICKER</h2>
                 <br>
             @if(count($errors) > 0)
@@ -40,10 +41,10 @@
                     </ul>
            </div>
         @endif
-        
-        
+
+
             <form action="{{ action('DogController@walk', $dog->id) }}" method="post">
-                  @csrf   
+                  @csrf
                   <input type="hidden" name="dog_id" value="{{ $dog->id }}">
                    <label for="walking">Choose a date for your next walk</label>
             <input type="date" name="walking" id="walking" value="{{ $date }}" onchange="reload_date(this.value)">
@@ -56,7 +57,7 @@
                         @endif
                     @endforeach
                     </div>
-            
+
              </form>
             <script>
              function reload_date($date) {
@@ -64,7 +65,7 @@
                  window.location.href = '?date=' + $date;
              }
             </script>
-        
+
             </div>
         </div>
     </div>
@@ -79,18 +80,18 @@
 
 <div class="container">
 
-    @if( Auth::user()->walks()->where('dog_id', $dog->id)->where('date', '<=', date('Y-m-d'))->count() > 0) 
+    @if( Auth::user()->walks()->where('dog_id', $dog->id)->where('date', '<=', date('Y-m-d'))->count() > 0)
     {{-- {{ Auth::user()->walks()->where('dog_id', $dog->id)->where('date', '<=', date('Y-m-d'))->count() }} --}}
-    
+
         <form method="post" action="{{ action('ReviewController@store', $dog->id) }}">
-            @csrf 
+            @csrf
             <label for="text">New Review:</label>
             <input type="hidden" name="dog_id" value="{{ $dog->id }}">
             <textarea name="text" class="form-control"></textarea>
             <button type="submit">Submit</button>
         </form>
     @endif
-</div> 
+</div>
 
 
 <div class="container">
@@ -99,13 +100,13 @@
         <p> {{ $review->text}} </p>
 
         <div class="votes">
-                <span>Was this review helpful?</span> 
-                
-               
-             
+                <span>Was this review helpful?</span>
+
+
+
                 <form action="{{action('ReviewController@vote', $review->id)}}" method="post">
                     @csrf
- 
+
                     <button type="submit" name="up" value="+1"><i class="far fa-thumbs-up"> {{ $review->positiveVotes() }}</i></button>
                     <button type="submit" name="down" value="-1"><i class="far fa-thumbs-down"> {{ $review->negativeVotes() }}</i></button>
                 </form>
@@ -115,21 +116,22 @@
         <form action="{{ action('ReviewController@destroy', $review->id)}}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button id="btn-delete"><i class="far fa-trash-alt"></i></button> 
-        </form> 
+                <button id="btn-delete"><i class="far fa-trash-alt"></i></button>
+        </form>
         @if ($review->approved == 0)
         <form action="{{ action('ReviewController@approved', $review->id)}}" method="POST">
                 @csrf
-                <button>Approve</button> 
-        </form> 
+                <button>Approve</button>
+        </form>
         @endif
         @endcan
         <hr>
     @endforeach
-   
-</div>
-    
+
 </div>
 
+</div>
+
+<script src="{{ mix('js/Header.js') }}"></script>
 @endsection
 

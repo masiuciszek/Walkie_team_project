@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<div id="navbar"></div>
 @section('content')
 
 
@@ -33,11 +33,11 @@
                         @foreach ($nextWalks as $walk)
                             <p> {{ $walk->date}} - {{ $walk->hour}}:00 with {{ $walk->dog->name}}</p>
                         @endforeach
-                
+
                 </div>
             </div>
         </div>
     </div>
 
-
-@endsection
+    @endsection
+    <script src="{{ mix('js/Header.js') }}"></script>
