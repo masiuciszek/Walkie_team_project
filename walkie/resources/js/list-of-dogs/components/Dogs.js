@@ -1,15 +1,8 @@
 console.log('it works')
 import React from 'react';
 import axios from 'axios';
-<<<<<<< HEAD
-<<<<<<< HEAD
-// import Button from '@material-ui/core/Button';
-=======
 import { Container, Row, Col, Button } from 'reactstrap';
->>>>>>> feat/dev
-=======
-import { Container, Row, Col, Button } from 'reactstrap';
->>>>>>> feat/dev
+
 
 class Dogs extends React.Component{
     constructor(){
@@ -53,31 +46,7 @@ class Dogs extends React.Component{
         return dogInfo;
     }
     render(){
-        return(
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <div className="ui container">
-                {/* {this.state.dogs.map(dog => <p>{dog.name} </p>)} */}
-                {/* <Button variant="contained" color="primary"> */}
-                        {/* Add a Dog */}
-                {/* </Button> */}
-=======
-            <div>
-                <Container>
-                <Row>
->>>>>>> feat/dev
-=======
-            <div>
-                <Container>
-                <Row>
->>>>>>> feat/dev
 
-                {this.content()}
-
-                </Row>
-                </Container>
-            </div>
-        )
     }
 }
 
