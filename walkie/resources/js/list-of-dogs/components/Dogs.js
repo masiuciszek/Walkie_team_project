@@ -36,7 +36,7 @@ class Dogs extends React.Component{
                 <h3 > Age: {dog.age} </h3>
                 <h3 >Sex: {dog.sex === 0 ? 'male' : 'female' } </h3>
                 <p >Breed: {dog.description}  </p>
-                <Button  variant="contained" color="info" href="/dog/1" className="">
+                <Button  variant="contained" color="info" href={"/dog/" + dog.id} className="">
                         Dog Profile
                 </Button>
             </Col>

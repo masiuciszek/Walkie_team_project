@@ -28,9 +28,11 @@ Route::get('/', function(){
 Route::group(['middleware' => ['can:admin']], function () {
 
     Route::resource('/dog', 'DogController')->except(['index', 'show']);
-    Route::resource('/user', 'UserController')->except(['create','store']);
+    Route::resource('/user', 'UserController')->except(['index','create','store']);
 
 });
+
+Route::get('/user', 'UserController@index');
 
 Route::resource('/dog', 'DogController')->only(['index', 'show']);
 Route::post('/dog/{id}', 'DogController@walk');
