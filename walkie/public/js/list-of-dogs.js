@@ -65986,15 +65986,15 @@ function (_React$Component) {
       var dogInfo = this.state.dogs.map(function (dog) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
           md: "4",
-          className: "text-center my-4"
+          className: "text-center my-4",
+          key: dog.id
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           style: style,
-          key: dog.id,
           src: "".concat(dog.image)
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " Name: ", dog.name, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " Age: ", dog.age, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Sex: ", dog.sex === 0 ? 'male' : 'female', " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Breed: ", dog.description, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
           variant: "contained",
           color: "info",
-          href: "/dog/{id}",
+          href: "/dog/id",
           className: ""
         }, "Dog Profile"));
       });
