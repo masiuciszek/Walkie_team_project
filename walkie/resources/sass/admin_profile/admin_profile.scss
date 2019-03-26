@@ -1,3 +1,5 @@
+@import './votes';
+
 #dogs-card {
     overflow: hidden;
 }
@@ -18,4 +20,36 @@
     #btn-edit {
         margin-right: 2rem;
     }
+}
+
+
+
+.btn-up{
+    padding: .5rem;
+    background: none;
+    // border: 3px solid #000;
+    font-size: 1.5rem;
+    border-radius: 3rem;
+}
+.btn-down{
+    padding: .5rem;
+    background: none;
+    // border: 3px solid #000;
+    font-size: 1.5rem;
+    border-radius: 3rem;
+}
+
+.icon-up{
+    border: 3px solid steelblue;
+    color: steelblue;
+    transition: .4s;
+    z-index: 1;
+    transform: translateX(52px)scale(2);
+}
+.icon-down{
+    border: 3px solid rgba(180, 42, 32, 0.801);
+    color: rgba(180, 42, 32, 0.801);
+    transition: .4s;
+    z-index: 1;
+    transform: translateX(52px)scale(2);
 }

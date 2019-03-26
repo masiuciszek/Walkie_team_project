@@ -48,3 +48,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+Route::post('api/review/{id}/vote', 'Api\DogController@reviewVote');
+// Route::post('api/walk/{id}/time', 'Api\DogController@bookTime');

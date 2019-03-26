@@ -11,7 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.react('resources/js/list-of-dogs/index.js', 'public/js/list-of-dogs.js')
+mix
+   .react('resources/js/list-of-dogs/index.js', 'public/js/list-of-dogs.js')
    .react('resources/js/modals/index.js', 'public/js/modals.js')
    .react('resources/js/homepage/index.js', 'public/js/Home.js')
    .react('resources/js/navbar/index.js', 'public/js/Header.js')

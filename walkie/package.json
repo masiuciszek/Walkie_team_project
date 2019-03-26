@@ -15,19 +15,23 @@
         "bootstrap": "^4.3.1",
         "cross-env": "^5.1",
         "jquery": "^3.2",
-        "laravel-mix": "^4.0.7",
+        "laravel-mix": "^4.0.15",
         "lodash": "^4.17.5",
         "popper.js": "^1.12",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0",
+        "react": "^16.8.5",
+        "react-dom": "^16.8.5",
         "resolve-url-loader": "^2.3.1",
-        "sass": "^1.15.2",
+        "sass": "^1.17.3",
         "sass-loader": "^7.1.0"
     },
     "dependencies": {
         "@material-ui/core": "^3.9.2",
+<<<<<<< HEAD
         "react-strap": "0.0.1",
         "reactstrap": "^7.1.0",
+=======
+        "react-spring": "^8.0.18",
+>>>>>>> feat/ajax26-03-19
         "semantic-ui-css": "^2.4.1"
     }
 }

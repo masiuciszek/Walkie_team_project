@@ -24843,6 +24843,7 @@ function commitRoot(root, finishedWork) {
     recordCommitTime();
   }
 
+<<<<<<< HEAD
   // Commit all the side-effects within a tree. We'll do this in two passes.
   // The first pass performs all the host insertions, updates, deletions and
   // ref unmounts.
@@ -24868,6 +24869,17 @@ function commitRoot(root, finishedWork) {
     }
   }
   stopCommitHostEffectsTimer();
+=======
+"use strict";
+/** @license React v16.8.5
+ * react-dom.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+>>>>>>> feat/ajax26-03-19
 
   resetAfterCommit(root.containerInfo);
 
@@ -31166,9 +31178,36 @@ function forwardRef(render) {
     } else if (typeof render !== 'function') {
       warningWithoutStack$1(false, 'forwardRef requires a render function but was given %s.', render === null ? 'null' : typeof render);
     } else {
+<<<<<<< HEAD
       !(
       // Do not warn for 0 arguments because it could be due to usage of the 'arguments' object
       render.length === 0 || render.length === 2) ? warningWithoutStack$1(false, 'forwardRef render functions accept exactly two parameters: props and ref. %s', render.length === 1 ? 'Did you forget to use the ref parameter?' : 'Any additional parameter will be undefined.') : void 0;
+=======
+      // Separate else branch instead of using `props.is || undefined` above because of a Firefox bug.
+      // See discussion in https://github.com/facebook/react/pull/6896
+      // and discussion in https://bugzilla.mozilla.org/show_bug.cgi?id=1276240
+      domElement = ownerDocument.createElement(type);
+      // Normally attributes are assigned in `setInitialDOMProperties`, however the `multiple` and `size`
+      // attributes on `select`s needs to be added before `option`s are inserted.
+      // This prevents:
+      // - a bug where the `select` does not scroll to the correct option because singular
+      //  `select` elements automatically pick the first item #13222
+      // - a bug where the `select` set the first item as selected despite the `size` attribute #14239
+      // See https://github.com/facebook/react/issues/13222
+      // and https://github.com/facebook/react/issues/14239
+      if (type === 'select') {
+        var node = domElement;
+        if (props.multiple) {
+          node.multiple = true;
+        } else if (props.size) {
+          // Setting a size greater than 1 causes a select to behave like `multiple=true`, where
+          // it is possible that no option is selected.
+          //
+          // This is only necessary when a select in "single selection mode".
+          node.size = props.size;
+        }
+      }
+>>>>>>> feat/ajax26-03-19
     }
 
     if (render != null) {
@@ -34957,12 +34996,18 @@ FormGroup.defaultProps = defaultProps;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "./node_modules/reactstrap/es/FormText.js":
 /*!************************************************!*\
   !*** ./node_modules/reactstrap/es/FormText.js ***!
   \************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+=======
+function throwInvalidHookError() {
+  invariant(false, 'Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:\n1. You might have mismatching versions of React and the renderer (such as React DOM)\n2. You might be breaking the Rules of Hooks\n3. You might have more than one copy of React in the same app\nSee https://fb.me/react-invalid-hook-call for tips about how to debug and fix this problem.');
+}
+>>>>>>> feat/ajax26-03-19
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -37002,6 +37047,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils */ "./node_modules/reactstrap/es/utils.js");
 
 
+<<<<<<< HEAD
+=======
+        {
+          var _destroy = effect.destroy;
+          if (_destroy !== undefined && typeof _destroy !== 'function') {
+            var addendum = void 0;
+            if (_destroy === null) {
+              addendum = ' You returned null. If your effect does not require clean ' + 'up, return undefined (or nothing).';
+            } else if (typeof _destroy.then === 'function') {
+              addendum = '\n\nIt looks like you wrote useEffect(async () => ...) or returned a Promise. ' + 'Instead, write the async function inside your effect ' + 'and call it immediately:\n\n' + 'useEffect(() => {\n' + '  async function fetchData() {\n' + '    // You can await here\n' + '    const response = await MyAPI.getData(someId);\n' + '    // ...\n' + '  }\n' + '  fetchData();\n' + '}, [someId]); // Or [] if effect doesn\'t need props or state\n\n' + 'Learn more about data fetching with Hooks: https://fb.me/react-hooks-data-fetching';
+            } else {
+              addendum = ' You returned: ' + _destroy;
+            }
+            warningWithoutStack$1(false, 'An effect function must not return anything besides a function, ' + 'which is used for clean-up.%s%s', addendum, getStackByFiberInDevAndProd(finishedWork));
+          }
+        }
+      }
+      effect = effect.next;
+    } while (effect !== firstEffect);
+  }
+}
+>>>>>>> feat/ajax26-03-19
 
 
 
@@ -38993,6 +39060,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils */ "./node_modules/reactstrap/es/utils.js");
 /* harmony import */ var _UncontrolledDropdown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./UncontrolledDropdown */ "./node_modules/reactstrap/es/UncontrolledDropdown.js");
 
+<<<<<<< HEAD
+=======
+var ReactVersion = '16.8.5';
+>>>>>>> feat/ajax26-03-19
 
 
 
@@ -39261,8 +39332,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Carousel__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./Carousel */ "./node_modules/reactstrap/es/Carousel.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Carousel", function() { return _Carousel__WEBPACK_IMPORTED_MODULE_33__["default"]; });
 
+<<<<<<< HEAD
 /* harmony import */ var _UncontrolledCarousel__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./UncontrolledCarousel */ "./node_modules/reactstrap/es/UncontrolledCarousel.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UncontrolledCarousel", function() { return _UncontrolledCarousel__WEBPACK_IMPORTED_MODULE_34__["default"]; });
+=======
+"use strict";
+/** @license React v16.8.5
+ * react.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+>>>>>>> feat/ajax26-03-19
 
 /* harmony import */ var _CarouselControl__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./CarouselControl */ "./node_modules/reactstrap/es/CarouselControl.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CarouselControl", function() { return _CarouselControl__WEBPACK_IMPORTED_MODULE_35__["default"]; });
@@ -39285,8 +39368,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CardTitle__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./CardTitle */ "./node_modules/reactstrap/es/CardTitle.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CardTitle", function() { return _CardTitle__WEBPACK_IMPORTED_MODULE_41__["default"]; });
 
+<<<<<<< HEAD
 /* harmony import */ var _CustomInput__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./CustomInput */ "./node_modules/reactstrap/es/CustomInput.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CustomInput", function() { return _CustomInput__WEBPACK_IMPORTED_MODULE_42__["default"]; });
+=======
+var ReactVersion = '16.8.5';
+>>>>>>> feat/ajax26-03-19
 
 /* harmony import */ var _PopperContent__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./PopperContent */ "./node_modules/reactstrap/es/PopperContent.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PopperContent", function() { return _PopperContent__WEBPACK_IMPORTED_MODULE_43__["default"]; });
@@ -39545,6 +39632,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+<<<<<<< HEAD
+=======
+function resolveDispatcher() {
+  var dispatcher = ReactCurrentDispatcher.current;
+  !(dispatcher !== null) ? invariant(false, 'Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:\n1. You might have mismatching versions of React and the renderer (such as React DOM)\n2. You might be breaking the Rules of Hooks\n3. You might have more than one copy of React in the same app\nSee https://fb.me/react-invalid-hook-call for tips about how to debug and fix this problem.') : void 0;
+  return dispatcher;
+}
+>>>>>>> feat/ajax26-03-19
 
 
 
@@ -39904,7 +39999,11 @@ var focusableElements = ['a[href]', 'area[href]', 'input:not([disabled]):not([ty
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+<<<<<<< HEAD
 /** @license React v0.13.3
+=======
+/** @license React v0.13.5
+>>>>>>> feat/ajax26-03-19
  * scheduler-tracing.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -40339,7 +40438,11 @@ exports.unstable_unsubscribe = unstable_unsubscribe;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+<<<<<<< HEAD
 /* WEBPACK VAR INJECTION */(function(global) {/** @license React v0.13.3
+=======
+/* WEBPACK VAR INJECTION */(function(global) {/** @license React v0.13.5
+>>>>>>> feat/ajax26-03-19
  * scheduler.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.

@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 <div id="navbar"></div>
 
@@ -43,17 +44,17 @@
         @endif
 
 
-            <form action="{{ action('DogController@walk', $dog->id) }}" method="post">
+            <form action="{{ action('DogController@walk', $dog->id) }}" data-dogid="{{$dog->id}}"  method="post">
                   @csrf
                   <input type="hidden" name="dog_id" value="{{ $dog->id }}">
                    <label for="walking">Choose a date for your next walk</label>
-            <input type="date" name="walking" id="walking" value="{{ $date }}" onchange="reload_date(this.value)">
+                    <input type="date" name="walking" id="walking" value="{{ $date }}">
                     <br>
                     <br>
                     <div class="btns-detail-container">
                     @foreach ($hours as $hour)
                         @if (empty($hours_taken[$hour]))
-                            <button type="submit" class="btn-primary" name="hour" value="{{ $hour }}">{{ $hour }}:00</button>
+                            <button type="submit" class="btn-primary submit-time" name="hour" value="{{ $hour }}">{{ $hour }}:00</button>
                         @endif
                     @endforeach
                     </div>
@@ -63,7 +64,7 @@
              function reload_date($date) {
                  console.log($date);
                  window.location.href = '?date=' + $date;
-             }
+             };
             </script>
 
             </div>
@@ -76,7 +77,7 @@
             <button type="button" class="close" data-dismiss="alert">×</button>
                    <strong>{{ $message }}</strong>
            </div>
-        @endif
+     @endif
 
 <div class="container">
 
@@ -85,13 +86,16 @@
 
         <form method="post" action="{{ action('ReviewController@store', $dog->id) }}">
             @csrf
-            <label for="text">New Review:</label>
-            <input type="hidden" name="dog_id" value="{{ $dog->id }}">
+            <label for="text">New Review:</label>/
+            <input type="hidden" name="dog_id" value="{{ $dog->id }}"/>
             <textarea name="text" class="form-control"></textarea>
             <button type="submit">Submit</button>
         </form>
     @endif
 </div>
+
+
+
 
 
 <div class="container">
@@ -104,13 +108,14 @@
 
 
 
-                <form action="{{action('ReviewController@vote', $review->id)}}" method="post">
+                <form action="{{action('ReviewController@vote', $review->id)}}" method="post" data-reviewId="{{ $review->id }}">
                     @csrf
 
-                    <button type="submit" name="up" value="+1"><i class="far fa-thumbs-up"> {{ $review->positiveVotes() }}</i></button>
-                    <button type="submit" name="down" value="-1"><i class="far fa-thumbs-down"> {{ $review->negativeVotes() }}</i></button>
+                    <button class="btn-up" type="submit" id="up" name="up" value="+1"><i class="far fa-thumbs-up"> {{ $review->positiveVotes() }}</i></button>
+                    <button class="btn-down" type="submit" id="down" name="down" value="-1"><i class="far fa-thumbs-down"> {{ $review->negativeVotes() }}</i></button>
                 </form>
             </div>
+
 
         @can('admin')
         <form action="{{ action('ReviewController@destroy', $review->id)}}" method="POST">
@@ -128,10 +133,11 @@
         <hr>
     @endforeach
 
-</div>
 
-</div>
+
+
 
 <script src="{{ mix('js/Header.js') }}"></script>
-@endsection
+<script src="{{ asset('js/ajax_vanillajs.js') }}"></script>
 
+@endsection
