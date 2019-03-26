@@ -26,12 +26,8 @@
     },
     "dependencies": {
         "@material-ui/core": "^3.9.2",
-<<<<<<< HEAD
         "react-strap": "0.0.1",
         "reactstrap": "^7.1.0",
-=======
-        "react-spring": "^8.0.18",
->>>>>>> feat/ajax26-03-19
         "semantic-ui-css": "^2.4.1"
     }
 }
