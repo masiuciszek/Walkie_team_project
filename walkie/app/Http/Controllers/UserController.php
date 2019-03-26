@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Dog;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
 
@@ -73,7 +74,8 @@ class UserController extends Controller
 
     public function contact()
     {
-        return view('user/contact');
+        $dogs = Dog::all();
+        return view('user/contact', compact('dogs'));
     }
 
     public function send(Request $request)
