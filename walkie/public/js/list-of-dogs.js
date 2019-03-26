@@ -65906,6 +65906,31 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./resources/js/list-of-dogs/components/App.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/list-of-dogs/components/App.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Dogs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Dogs */ "./resources/js/list-of-dogs/components/Dogs.js");
+/* harmony import */ var _HeaderGallery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HeaderGallery */ "./resources/js/list-of-dogs/components/HeaderGallery.js");
+
+
+
+
+var App = function App() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_HeaderGallery__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Dogs__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
 /***/ "./resources/js/list-of-dogs/components/Dogs.js":
 /*!******************************************************!*\
   !*** ./resources/js/list-of-dogs/components/Dogs.js ***!
@@ -65939,6 +65964,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 console.log('it works');
+
 
 
 
@@ -65979,24 +66005,46 @@ function (_React$Component) {
   }, {
     key: "content",
     value: function content() {
-      var style = {
-        width: '300px',
-        height: '250px'
-      };
+      // let style = {width: '300px', height:'250px'}
       var dogInfo = this.state.dogs.map(function (dog) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
-          md: "4",
+          md: "6",
+          xl: "4",
           className: "text-center my-4",
           key: dog.id
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          style: style,
-          src: "".concat(dog.image)
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " Name: ", dog.name, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " Age: ", dog.age, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Sex: ", dog.sex === 0 ? 'male' : 'female', " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Breed: ", dog.description, "  "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "card-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Card"], {
+          className: "card-dogs-gallery"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardImg"], {
+          top: true,
+          width: "100%",
+          src: "".concat(dog.image),
+          alt: "dog image cap"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardTitle"], {
+          className: "card-title"
+        }, dog.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardText"], {
+          className: "card-text"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "dog-description-gallery"
+        }, dog.description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
           variant: "contained",
           color: "info",
           href: "/dog/" + dog.id,
-          className: ""
-        }, "Dog Profile"));
+          className: "card-btn"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " Dog Profile "))))) // <Col md="4" className="text-center my-4" key={dog.id}>
+        //     <div className="card-gallery">
+        //     <img  src={`${dog.image}`} className="gallery-img"/>
+        //     <h3 > Name: {dog.name} </h3>
+        //     <h3 > Age: {dog.age} </h3>
+        //     <h3 >Sex: {dog.sex === 0 ? 'male' : 'female' } </h3>
+        //     <p >Breed: {dog.description}  </p>
+        //     <Button  variant="contained" color="info" href={"/dog/" + dog.id} className="">
+        //             Dog Profile
+        //     </Button>
+        //     </div>
+        // </Col>
+        ;
       });
       return dogInfo;
     }
@@ -66014,6 +66062,35 @@ function (_React$Component) {
 
 /***/ }),
 
+/***/ "./resources/js/list-of-dogs/components/HeaderGallery.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/list-of-dogs/components/HeaderGallery.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var HeaderGallery = function HeaderGallery() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "header-gallery"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "title-gallery"
+  }, "Our Dogs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "description-gallery"
+  }, "Here is a list of our dogs that you can take for a walk or adopt.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " Adopt don't buy!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+    className: "hr-gallery"
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (HeaderGallery);
+
+/***/ }),
+
 /***/ "./resources/js/list-of-dogs/index.js":
 /*!********************************************!*\
   !*** ./resources/js/list-of-dogs/index.js ***!
@@ -66027,11 +66104,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Dogs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Dogs */ "./resources/js/list-of-dogs/components/Dogs.js");
+/* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/App */ "./resources/js/list-of-dogs/components/App.js");
 
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Dogs__WEBPACK_IMPORTED_MODULE_2__["default"], null), document.getElementById('dogs'));
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_App__WEBPACK_IMPORTED_MODULE_2__["default"], null), document.getElementById('dogs'));
 
 /***/ }),
 

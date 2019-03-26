@@ -1,15 +1,75 @@
-.container {
+#home {
     background-image: url('/jpg/adorable-animal.jpg');
     height: 100vh;
     width: 100vw;
-    background-size: cover; 
-    display: flex;  
-    align-items: center;
-    text-align: center;
-    justify-content: center;
+    background-color: #f6fbfe;
+    background-size: contain;
+    background-repeat: no-repeat;   
+    background-position: bottom;
+    .walkie.text-center {
+        padding: 2rem;
+        border-radius: 5rem;
+        margin-top: 2rem;
+        background: rgba(255,255,255,0);
+        background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(199,209,228,0.54) 50%, rgba(173,188,215,0.54) 73%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(50%, rgba(199,209,228,0.54)), color-stop(73%, rgba(173,188,215,0.54)));
+        background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(199,209,228,0.54) 50%, rgba(173,188,215,0.54) 73%);
+        background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(199,209,228,0.54) 50%, rgba(173,188,215,0.54) 73%);
+        background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(199,209,228,0.54) 50%, rgba(173,188,215,0.54) 73%);
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(199,209,228,0.54) 50%, rgba(173,188,215,0.54) 73%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#adbcd7', GradientType=0 );
+    } .walkie.text-center > h1 {
+        font-size: $h1;
+    } .walkie.text-center > p {
+        font-size: $p;
+        line-height: $line-height;
+    } .nav-hamburger {
+        display: none;
+    }
 }
 
-.content {
-    height: 40vh;
-    width: 70vw;
+@include sm {
+    #home { 
+    .walkie.text-center{
+        padding:0.2rem;
+        padding-top: $homepage-content-padding-sm;
+    }.walkie.text-center > p {
+        font-size: $p-sm;
+        
+    }.walkie.text-center > h1{
+        font-size: $h1-sm;
+    }.nav-hamburger{
+        display: none;
+        }
+    }
 }
+
+@include md {
+    #home { 
+        .walkie.text-center{
+            padding-top: $homepage-content-padding-sm;
+            margin-top: 5rem;
+        }
+    }
+}
+
+@include xl {
+    #home { 
+    background-size: cover;
+        .walkie.text-center {
+            margin-top: 5rem;
+
+        }
+    }
+}
+
+@include rwd {
+    #home { 
+        .walkie.text-center {
+            padding-top: $homepage-content-padding-sm;
+        }
+    }
+}
+
+
+

@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Dogs from './components/Dogs';
+import App from './components/App';
 
-ReactDOM.render(<Dogs />, document.getElementById('dogs'));
+ReactDOM.render(<App />, document.getElementById('dogs'));

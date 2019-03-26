@@ -1,5 +1,80 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+#home {
+  background-image: url("/jpg/adorable-animal.jpg");
+  height: 100vh;
+  width: 100vw;
+  background-color: #f6fbfe;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+#home .walkie.text-center {
+  padding: 2rem;
+  border-radius: 5rem;
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(199, 209, 228, 0.54)), color-stop(73%, rgba(173, 188, 215, 0.54)));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(199, 209, 228, 0.54) 50%, rgba(173, 188, 215, 0.54) 73%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#ffffff", endColorstr="#adbcd7", GradientType=0 );
+}
+
+#home .walkie.text-center > h1 {
+  font-size: 4rem;
+}
+
+#home .walkie.text-center > p {
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+}
+
+#home .nav-hamburger {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  #home .walkie.text-center {
+    padding: 0.2rem;
+    padding-top: 2rem;
+  }
+
+  #home .walkie.text-center > p {
+    font-size: 1.1rem;
+  }
+
+  #home .walkie.text-center > h1 {
+    font-size: 2.5rem;
+  }
+
+  #home .nav-hamburger {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  #home .walkie.text-center {
+    padding-top: 2rem;
+    margin-top: 5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  #home {
+    background-size: cover;
+  }
+
+  #home .walkie.text-center {
+    margin-top: 5rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  #home .walkie.text-center {
+    padding-top: 2rem;
+  }
+}
+
 .main-header {
   background: steelblue;
   height: 100vh;
@@ -63,6 +138,53 @@
 
 .btn-container #btn-edit {
   margin-right: 2rem;
+}
+
+.header-gallery {
+  text-align: center;
+  padding: 4rem;
+}
+
+.title-gallery {
+  font-size: 5rem;
+  padding: 1rem;
+}
+
+.description-gallery {
+  padding: 2rem;
+  font-size: 1.8rem;
+}
+
+.hr-gallery {
+  width: 70vw;
+}
+
+.card-dogs-gallery {
+  height: 45rem;
+  box-shadow: 5px 6px 22px 0px rgba(0, 0, 0, 0.61);
+}
+
+.card-dogs-gallery .card-title {
+  font-size: 2rem;
+}
+
+.card-dogs-gallery .card-text {
+  font-size: 1.1rem;
+}
+
+.card-dogs-gallery .card-btn {
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.card-dogs-gallery .card-btn > p {
+  font-size: 1rem;
+}
+
+.card-dogs-gallery .dog-description-gallery {
+  margin-top: 1rem;
 }
 
 .dog-detail-name {
