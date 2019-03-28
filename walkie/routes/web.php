@@ -49,4 +49,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::post('api/review/{id}/vote', 'Api\DogController@reviewVote');
-// Route::post('api/walk/{id}/time', 'Api\DogController@bookTime');
+Route::get('api/walk/{id}/time/{date}', 'Api\DogController@availableTimes');
+Route::post('api/walk/{id}/time', 'Api\DogController@bookTime');

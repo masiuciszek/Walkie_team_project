@@ -1,14 +1,23 @@
-function fetchUrl(url,bodyVal, callback){
+function fetchUrl(url,bodyVal, callback, method){
+  if (method === undefined) {
+    method = 'post'
+  }
   fetch(url, {
-    method: 'post',
+    method: method,
     headers: {
         "Content-Type": "application/json",
     },
-    body: bodyVal,
+    body: method == 'post' ? bodyVal :  null,
   })
   .then(response => response.json())
   .then(response => callback(response))
   .catch(error => console.error(error));
+}
+
+function hoursTaken(hours,target){
+  if(hours == null){
+    target.display === 'none';
+  }
 }
 
         const btnUp = document.querySelectorAll('.btn-up');
@@ -48,33 +57,44 @@ function fetchUrl(url,bodyVal, callback){
         })
 
 
-        // const datesInputCalander = document.querySelector('#walking');
-        // datesInputCalander.addEventListener('change', (e) => {
-        //   console.log(e.target.value);
-        //   const id = e.target.closest('form').dataset.dogid;
-        //   console.log(id)
-        //   fetchUrl(`/api/walk/${id}/time`,
-        //   JSON.stringify({_token:csrfToken, walk:e.target.value})
-        //   )
-        // })
+        const datesInputCalander = document.querySelector('#walking');
+        datesInputCalander.addEventListener('change', (e) => {
+          console.log(e.target.value);
+          const date = e.target.value;
+          const id = e.target.closest('form').dataset.dogid;
+          console.log(id)
+          fetchUrl(`/api/walk/${id}/time/${date}`,
+          JSON.stringify({_token:csrfToken, walk:e.target.value}),
+          (response) => {
+            console.log('Success:', response);
+          },'get')
+
+        })
 
 
-        // const submitTimes = document.querySelectorAll('.submit-time');
+        const submitTimes = document.querySelectorAll('.submit-time');
 
-        // submitTimes.forEach(btn => {
-        //   btn.addEventListener('click', (e) => {
-        //     e.preventDefault();
-        //     console.log('yeah booi');
-        //     const id = e.target.closest('form').dataset.dogid
-        //     console.log(id);
-        //     fetchUrl(`/api/walk/${id}/time`,
-        //     JSON.stringify({_token:csrfToken, walk:btn.value}),
-        //     (response) => {
-        //       console.log('Success:', response);
-        //     }
-        //     )
-        //   })
-        // })
+        submitTimes.forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // console.log(btn.value)
+            const id = e.target.closest('form').dataset.dogid
+            console.log(id);
+            fetchUrl(`/api/walk/${id}/time`,
+            JSON.stringify({_token:csrfToken, walk:btn.value}),
+            (response) => {
+              console.log('Success:', response);
+            }
+            )
+            btn.style.display = 'none';
+          });
+
+          // if(datesInputCalander.value != btn.value ) {
+          //   btn.style.display = 'none';
+          // }
+
+        })
+
         // const hourBtn = document.querySelector('.submit-time');
         // hourBtn.addEventListener('click', (e) => {
         //    e.preventDefault();
@@ -83,7 +103,7 @@ function fetchUrl(url,bodyVal, callback){
         //        JSON.stringify({walk: datesInput}),
         //        (response) => {
         //            console.log('Success:', response);
-        //            // btnUp.querySelector('i').innerHTML = " " + response;
         //        }
         //    );
+
         // });

@@ -42,28 +42,31 @@ class DogController extends Controller
     }
 
 
-    public function bookTime(Request $request, $id){
+    public function availableTimes(Request $request, $id, $date){
 
         // $date = $request->input('date', date('Y-m-d'));
-        // $dog = Dog::findOrFail($id);
-        // $walks = Walk::where('dog_id', $dog->id)->day($date)->get();
+        $dog = Dog::findOrFail($id);
+        $walks = Walk::where('dog_id', $dog->id)->day($date)->get();
 
-        // if (Gate::allows('admin')){
-        //     $reviews = Review::where('dog_id', $dog->id)->get();
-        // }else{
-        //     $reviews = Review::where('dog_id', $dog->id)->where('approved', true)->get();
-        // }
+        if (\Gate::allows('admin')){
+            $reviews = Review::where('dog_id', $dog->id)->get();
+        }else{
+            $reviews = Review::where('dog_id', $dog->id)->where('approved', true)->get();
+        }
 
-        // $hours_taken = [];
-        // foreach ($walks as $walk) {
-        //     $hours_taken[$walk->hour] = true;
-        // }
+        $hours_taken = [];
+        foreach ($walks as $walk) {
+            $hours_taken[$walk->hour] = true;
+        }
 
-        // $hours = Walk::getHoursForDay($date);
-        // return response()->json(compact('walks','dog', 'walks'));
-        // return redirect(action('DogController@show', $dog->id))->with('success', 'Thank you! Information about your next walk are already in your profile!');
+        $hours = Walk::getHoursForDay($date);
+        return response()->json(compact('walks','dog', 'walks','date'));
+    }
 
-
+    public function bookTime(Request $request, $id)
+    {
+        $walks = Walk::all();
+        // if($walks  )
     }
     /**
      * Display a listing of the resource.
