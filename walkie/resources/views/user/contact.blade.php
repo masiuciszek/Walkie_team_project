@@ -42,11 +42,14 @@
               </div>
               <div class="form-group">
                 <label>Name of the chosen dog:</label>
-                <select name="dog">
+                <input type="text" name="dog" class="form-control" value="{{ $dog->name }}" />
+
+                {{-- <select name="dog">
                 @foreach ($dogs as $dog)
                 <option value="{{ $dog->name}}"> {{ $dog->name}}</option>
                 @endforeach
-              </select>
+              </select> --}}
+
               </div>
               <div class="form-group">
                 <label>Why would you like to adops this dog?</label>

@@ -28,7 +28,7 @@ const csrfToken = document.getElementById('csrf-token').content;
 btnUp.forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.preventDefault();
-        document.querySelector('.fa-thumbs-up').classList = 'fa fa-thumbs-up icon-up';
+        btn.style.color = 'steelblue';
         const id = e.target.closest('form').dataset.reviewid;
         fetchUrl(
             `/api/review/${id}/vote`,
@@ -41,13 +41,14 @@ btnUp.forEach(btn => {
                 btn.querySelector('.fa-thumbs-up').innerHTML = " " + response.posetiveVotes;
             }
         )
+        btn.disabled = true;
     });
 });
 
 btnDown.forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.preventDefault();
-        document.querySelector('.fa-thumbs-down').classList = 'fa fa-thumbs-up icon-down';
+        btn.style.color = 'tomato';
         const id = e.target.closest('form').dataset.reviewid;
         fetchUrl(
             `/api/review/${id}/vote`,
@@ -60,6 +61,7 @@ btnDown.forEach(btn => {
                 btn.querySelector('.fa-thumbs-down').innerHTML = " " + response.negativeVotes;
             }
         )
+        btn.disabled = true;
     });
 })
 

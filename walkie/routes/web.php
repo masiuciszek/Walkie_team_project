@@ -47,8 +47,8 @@ Route::get('/dog/{id}', 'ReviewController@create');
 Route::delete('/review/{id}', 'ReviewController@destroy');
 Route::post('/review/{id}', 'ReviewController@vote');
 Route::post('/review/{id}/approved', 'ReviewController@approved');
-Route::get('/contact', 'UserController@contact');
-Route::post('/contact', 'UserController@send');
+Route::get('/contact/{id?}', 'UserController@contact');
+Route::post('/contact/{id?}', 'UserController@send');
 //Auth:
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

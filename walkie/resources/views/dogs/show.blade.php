@@ -29,6 +29,7 @@
             <h4>Description: {{ $dog->description }}</h4>
             <hr>
             <button><a href="{{ action('DogController@index')}}">HOME</a></button>
+            <button><a href="{{ action('UserController@contact', $dog->id)}}">ADOPT A DOG</a></button>
 
             <h2 class="date-detail">DATE PICKER</h2>
                 <br>

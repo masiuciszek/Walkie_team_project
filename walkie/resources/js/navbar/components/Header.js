@@ -41,7 +41,7 @@ export default class Header extends React.Component {
                 <NavLink href="/dog">Dogs</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/contact">Contact</NavLink>
+                {/* <NavLink href="/contact">Contact</NavLink> */}
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
@@ -52,7 +52,9 @@ export default class Header extends React.Component {
                       <a href="/logout">Logout</a>
                   </DropdownItem>
                   <DropdownItem>
-                    {/* <a href="">Logout</a> */}
+                    <a href="/user">User profile</a>
+                  </DropdownItem>
+                  <DropdownItem>
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>

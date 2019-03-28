@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         return $this->middleware('auth');
     }
-  
+
     public function index()
     {
         $date = date('Y-m-d');
@@ -24,7 +24,7 @@ class UserController extends Controller
 
         $prevWalks = Auth::user()->walks()->whereRaw('(`date` < ? or ( `date` = ? and `hour` <= ? ))', [$date, $date, $hour])->orderBy('date')->orderBy('hour')->get();
         $nextWalks = Auth::user()->walks()->whereRaw('(`date` > ? or ( `date` = ? and `hour` > ? ))', [$date, $date, $hour])->orderBy('date')->orderBy('hour')->get();
-        
+
         $user = User::all();
         $auth = Auth::user();
         return view('user.index', compact('user', 'auth', 'prevWalks', 'nextWalks'));
@@ -38,7 +38,7 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        
+
     }
 
 
@@ -49,7 +49,7 @@ class UserController extends Controller
         return view('user.show', compact(['auth', 'user']));
     }
 
-    
+
     public function edit($id)
     {
         $auth = Auth::user();
@@ -72,10 +72,15 @@ class UserController extends Controller
         return redirect(action('UserController@index'));
     }
 
-    public function contact()
+    public function contact($id = null)
     {
-        $dogs = Dog::all();
-        return view('user/contact', compact('dogs'));
+
+        if($id) {
+            $dog = Dog::findOrFail($id);
+        } else {
+            $dogs = Dog::all();
+        }
+        return view('user/contact', compact('dog','dogs'));
     }
 
     public function send(Request $request)

@@ -5,6 +5,10 @@
 
 <h1 class="user-title">Welcome</h1>
     <div class="container">
+        @if ($auth->admin == true)
+        <button class="btn btn-info text-white" {{ url('dog/create') }}>Manage the dogs</button>
+        @endif
+
         <div class="jumbotron" id="user_info_container">
             <div class="card">
                 <div class="card-body">
