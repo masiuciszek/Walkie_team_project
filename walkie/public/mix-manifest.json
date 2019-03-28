@@ -1,9 +1,7 @@
-    "/js/modals.js": "/js/modals.js?id=bb7dba265bc4bee35e5c"
-=======
-    "/js/Header.js": "/js/Header.js?id=a99bdb644903bccef31f",
-    "/js/Home.js": "/js/Home.js?id=1f02135fb28f5a8a2003",
-    "/js/list-of-dogs.js": "/js/list-of-dogs.js?id=526963f6a8ae6cddb634",
+{
+    "/js/Header.js": "/js/Header.js?id=f948c2bcb6d0e794cae0",
+    "/js/Home.js": "/js/Home.js?id=8a086ac2e7606b3da332",
+    "/js/list-of-dogs.js": "/js/list-of-dogs.js?id=e1e13d4b356cdeb2a028",
     "/css/app.css": "/css/app.css?id=df6087bed85a41e78169",
-
->>>>>>> c22de7ed1e51e4b9c0f942a1b9fdcdb8dc796fb1
+    "/js/modals.js": "/js/modals.js?id=d945a4ced77861d4a897"
 }
