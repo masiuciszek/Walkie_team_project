@@ -4,24 +4,21 @@
 
 
 <h1 class="user-title">Welcome</h1>
-<<<<<<< HEAD
-    <div class="container">
-        @if ($auth->admin == true)
-        <button class="btn btn-info text-white" {{ url('dog/create') }}>Manage the dogs</button>
-        @endif
-
-        <div class="jumbotron" id="user_info_container">
-            <div class="card">
-                <div class="card-body">
-=======
-
-<div class="container">
+{{-- <div class="container">
     <div class="row">
         <div class="col-md-6">
             <div class="jumbotron" id="user_info_container">
                 <div class="card">
-                    <div class="card-body" id="user-info-card">
->>>>>>> c22de7ed1e51e4b9c0f942a1b9fdcdb8dc796fb1
+                    <div class="card-body" id="user-info-card"> --}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="jumbotron" id="user_info_container">
+                    <div class="card">
+                            @if ($auth->admin == true)
+                            <button class="btn btn-info text-white"><a href="{{ url('dog/create') }}">Manage the dogs</a></button>
+                            @endif
+                <div class="card-body" id="user-info-card">
                     <h3>{{$auth->first_name}} {{$auth->last_name}} </h3>
                     <p>{{$auth->user_name}}</p>
                     <p>{{$auth->email}}</p>
