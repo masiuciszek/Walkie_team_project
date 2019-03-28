@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +33,11 @@ Route::group(['middleware' => ['can:admin']], function () {
 
 });
 
+
+
+
+
+
 Route::get('/user', 'UserController@index');
 
 Route::resource('/dog', 'DogController')->only(['index', 'show']);
@@ -46,5 +52,10 @@ Route::post('/contact', 'UserController@send');
 //Auth:
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
+
+Route::post('api/review/{id}/vote', 'Api\DogController@reviewVote');
+Route::get('api/walk/{id}/time/{date}', 'Api\DogController@availableTimes');
+Route::post('api/walk/{id}/time', 'Api\DogController@bookTime');
 
