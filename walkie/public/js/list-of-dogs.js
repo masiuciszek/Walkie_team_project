@@ -66023,7 +66023,7 @@ function (_React$Component) {
           alt: "dog image cap"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardBody"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardTitle"], {
           className: "card-title"
-        }, dog.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardText"], {
+        }, dog.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["CardText"], {
           className: "card-text"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "dog-description-gallery"
@@ -66082,7 +66082,7 @@ var HeaderGallery = function HeaderGallery() {
     className: "title-gallery"
   }, "Our Dogs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "description-gallery"
-  }, "Here is a list of our dogs that you can take for a walk or adopt.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " Adopt don't buy!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
+  }, "Here is a list of our dogs that you can take for a walk or adopt.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " #adoptdontshop"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
     className: "hr-gallery"
   }));
 };

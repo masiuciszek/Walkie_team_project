@@ -58,13 +58,17 @@ class ReviewController extends Controller
     {
         $review = Review::findOrFail($id);
         $review->delete();
-        return redirect()->back()->with('success', 'Review deleted.');
+        return redirect()->back();
     }
 
     public function vote($id)
-    {
-        $request = request();
+    { 
         $review = Review::find($id);
+
+        if (\App\Vote::where('user_id', Auth::id())->where('review_id', $review->id)->count() > 0){
+            return back()->with('danger', 'You already voted.');
+        }
+        $request = request();
         $vote = new \App\Vote;
         $vote->user_id = Auth::id();
         $vote->review_id = $review->id;

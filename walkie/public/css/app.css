@@ -113,17 +113,13 @@
   text-align: center;
 }
 
-#user-info-card {
-  margin-top: 30%;
-}
-
 #dogs-card {
   overflow: hidden;
 }
 
-.card {
+#admin-card {
+  height: 65vh;
   overflow: auto;
-  height: 70vh;
 }
 
 .btn-container {
@@ -189,15 +185,156 @@
 
 .dog-detail-name {
   text-align: center;
+  margin-top: -2.5rem;
+}
+
+.dog-description-info {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.dog-description {
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.fas.fa-paw {
+  color: rgba(108, 178, 235, 0.5);
+  margin: 0 0.5rem;
+}
+
+#walking {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.callendar {
+  display: flex;
 }
 
 .date-detail {
   text-align: center;
 }
 
+.btn-primary.btns-hours {
+  padding: 0.7rem 1rem;
+  border-radius: 10%;
+  font-size: 1rem;
+}
+
 .btns-detail-container {
   display: flex;
   justify-content: space-around;
+}
+
+.image-dog-detail {
+  box-shadow: 4px 4px 14px -2px rgba(0, 0, 0, 0.42);
+}
+
+.hr-dog-detail {
+  width: 80%;
+  border-color: rgba(0, 0, 0, 0.171);
+}
+
+.bones-line {
+  display: flex;
+  justify-content: center;
+}
+
+.bones-line .fa-bone {
+  color: rgba(108, 178, 235, 0.5);
+  margin: 0 2rem;
+}
+
+.form-review {
+  display: flex;
+}
+
+.form-review #comment-textarea {
+  height: 20vh;
+}
+
+.form-group.comment-form {
+  width: 60vw;
+  margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+  .form-group.comment-form {
+    width: 80vw;
+  }
+}
+
+.review-top-line {
+  margin-top: -1rem;
+}
+
+.btn-flex {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.btn.btn-success.btn-review {
+  padding: 0.7rem 1rem;
+  border-radius: 10%;
+  margin-top: 1rem;
+  margin-right: 2rem;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.review-card {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.review-card .comment-top-section {
+  display: flex;
+}
+
+.review-card .comment-top-section .review-name {
+  font-size: 1.2rem;
+  margin-right: 2rem;
+}
+
+.review-card .votes-thumbs-container .btn-like {
+  border: none;
+  margin-right: 2rem;
+}
+
+.review-card .votes-thumbs-container .btn-dislike {
+  border: none;
+}
+
+.admin-btns-review {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.admin-btns-review .btn-delete {
+  margin-right: 1.5rem;
+  border: none;
+}
+
+.admin-btns-review .btn-accept {
+  border: none;
+}
+
+.review-created-at {
+  color: rgba(0, 0, 0, 0.452);
+}
+
+.review-txt {
+  font-size: 1.4rem;
+  margin: 1rem 0;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: rgba(108, 178, 235, 0.349);
+}
+
+.hr-comment-line {
+  margin: 3rem;
 }
 
 [type=date] {

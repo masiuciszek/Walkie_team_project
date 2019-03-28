@@ -3,7 +3,7 @@
 @section('content')
 
 
-<h1 class="user-title">Welcome</h1>
+<h1 class="user-title">Welcome {{$auth->first_name}} {{$auth->last_name}} </h1>
 
 <div class="container">
     <div class="row">

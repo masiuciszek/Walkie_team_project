@@ -25,24 +25,28 @@
   <div class="jumbotron">
       <div class="card">
         <div class="card-body">
-          <h3 class="contact-title">Contact</h3>
+          <h3 class="contact-title">Adopt a dog form contact</h3>
           <form action=""{{action('UserController@send')}} method="post">
           @csrf
               <div class="form-group">
                 <label>Your Name:</label>
-                <input type="text" name="name" class="form-control" value="{{old('name')}}"/>
+              <input type="text" name="name" class="form-control" value="{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}"/>
               </div>
               <div class="form-group">
                 <label>Your Email:</label>
-                <input type="text" name="email" class="form-control" value="{{old('email')}}" />
+                <input type="text" name="email" class="form-control" value="{{ Auth::user()->email }}" />
               </div>
               <div class="form-group">
                 <label>Your Phone Number:</label>
-                <input type="text" name="phone" class="form-control" value="{{old('phone')}}" />
+                <input type="text" name="phone" class="form-control" value="{{ Auth::user()->phone_number }}" />
               </div>
               <div class="form-group">
                 <label>Name of the chosen dog:</label>
-                <input type="text" name="dog" class="form-control" value="{{old('dog')}}" />
+                <select name="dog">
+                @foreach ($dogs as $dog)
+                <option value="{{ $dog->name}}"> {{ $dog->name}}</option>
+                @endforeach
+              </select>
               </div>
               <div class="form-group">
                 <label>Why would you like to adops this dog?</label>

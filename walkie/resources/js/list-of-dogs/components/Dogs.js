@@ -42,6 +42,7 @@ class Dogs extends React.Component{
                 <CardTitle className="card-title">
                 {dog.name}
                 </CardTitle>
+                <hr></hr>
                 {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
                 <CardText className="card-text">
                     {/* Age: {dog.age} <br />
