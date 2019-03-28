@@ -49,10 +49,10 @@ export default class Header extends React.Component {
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                    Option 1
+                      <a href="/logout">Logout</a>
                   </DropdownItem>
                   <DropdownItem>
-                    Option 2
+                    {/* <a href="">Logout</a> */}
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>

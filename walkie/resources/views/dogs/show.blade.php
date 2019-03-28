@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 <div id="navbar"></div>
 
@@ -62,7 +63,22 @@
         @endif
 
 
-            <form action="{{ action('DogController@walk', $dog->id) }}" method="post">
+            <form action="{{ action('DogController@walk', $dog->id) }}" data-dogid="{{$dog->id}}"  method="post">
+                  {{-- @csrf
+                  <input type="hidden" name="dog_id" value="{{ $dog->id }}">
+                   <label for="walking">Choose a date for your next walk</label>
+                    <input type="date" name="walking" id="walking" value="{{ $date }}">
+                    <br>
+                    <br>
+                    <div class="btns-detail-container">
+                    @foreach ($hours as $hour)
+                        @if (empty($hours_taken[$hour]))
+                            <button type="submit" class="btn-primary submit-time" name="hour" value="{{ $hour }}">{{ $hour }}:00</button>
+                        @endif
+                    @endforeach
+                    </div> --}}
+
+                     <form action="{{ action('DogController@walk', $dog->id) }}" method="post">
                 @csrf
                 
                 <input type="hidden" name="dog_id" value="{{ $dog->id }}">
@@ -80,13 +96,12 @@
                     @endif
                 @endforeach
                 </div>
-
              </form>
             <script>
              function reload_date($date) {
                  console.log($date);
                  window.location.href = '?date=' + $date;
-             }
+             };
             </script>
 
             </div>
@@ -124,9 +139,45 @@
     @endif
 </div>
 
-
 <div class="container">
-    
+    @foreach ($reviews as $review)
+        <h2> {{ $review->user->first_name}} {{ $review->user->last_name}}</h2>
+        <p> {{ $review->text}} </p>
+
+        <div class="votes">
+                <span>Was this review helpful?</span>
+
+
+
+                <form action="{{action('ReviewController@vote', $review->id)}}" method="post" data-reviewId="{{ $review->id }}">
+                    @csrf
+
+                    <button class="btn-up" type="submit" id="up" name="up" value="+1"><i class="far fa-thumbs-up"> {{ $review->positiveVotes() }}</i></button>
+                    <button class="btn-down" type="submit" id="down" name="down" value="-1"><i class="far fa-thumbs-down"> {{ $review->negativeVotes() }}</i></button>
+                </form>
+            </div>
+
+
+        @can('admin')
+        <form action="{{ action('ReviewController@destroy', $review->id)}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button id="btn-delete"><i class="far fa-trash-alt"></i></button>
+        </form>
+        @if ($review->approved == 0)
+        <form action="{{ action('ReviewController@approved', $review->id)}}" method="POST">
+                @csrf
+                <button>Approve</button>
+        </form>
+        @endif
+        @endcan
+        <hr>
+    @endforeach
+
+
+
+{{-- <div class="container">
+   
     @foreach ($reviews as $review)
     
         <div class="card review-card">
@@ -136,18 +187,20 @@
                 <p class="review-created-at"> {{ $review->user->created_at }} </p>
                 </div>
                 <hr class="review-top-line">
-                <p class="review-txt"> {{ $review->text}} </p>
+                <p class="review-txt"> {{ $review->text}} </p> --}}
 
-                <div class="votes">
+
+{{-- od tego miejsca --}}
+                {{-- <div class="votes">
                     <span class="review-info">Was this review helpful?</span>
                     <form action="{{action('ReviewController@vote', $review->id)}}" method="post">
                     @csrf
                     <div class="votes-thumbs-container">
-                        <button type="submit" name="up" value="+1" class="btn-like">
-                            <i class="far fa-thumbs-up  fa-2x"> {{ $review->positiveVotes() }}</i>
+                        <button type="submit" name="up" value="+1" class="btn-like btn-up">
+                            <i class="far fa-thumbs-up icon-up fa-2x"> {{ $review->positiveVotes() }}</i>
                         </button>
-                        <button type="submit" name="down" value="-1" class="btn-dislike">
-                            <i class="far fa-thumbs-down fa-2x thums-down-icon"> {{ $review->negativeVotes() }}</i>
+                        <button type="submit" name="down" value="-1" class="btn-dislike btn-down">
+                            <i class="far fa-thumbs-down fa-2x icon-down thums-down-icon"> {{ $review->negativeVotes() }}</i>
                         </button>
                     </div>
                     </form>
@@ -174,10 +227,37 @@
             </div>
         </div>
         <hr class="hr-comment-line">
-        @endforeach
+        @endforeach --}}
     </div>
 </div>
+{{-- do tego miejsca --}}
+{{-- <form action="{{action('ReviewController@vote', $review->id)}}" method="post" data-reviewId="{{ $review->id }}">
+    @csrf
 
+    <button class="btn-up" type="submit" id="up" name="up" value="+1"><i class="far fa-thumbs-up"> {{ $review->positiveVotes() }}</i></button>
+    <button class="btn-down" type="submit" id="down" name="down" value="-1"><i class="far fa-thumbs-down"> {{ $review->negativeVotes() }}</i></button>
+</form>
+</div>
+
+
+@can('admin')
+<form action="{{ action('ReviewController@destroy', $review->id)}}" method="POST">
+@csrf
+@method('DELETE')
+<button id="btn-delete"><i class="far fa-trash-alt"></i></button>
+</form>
+@if ($review->approved == 0)
+<form action="{{ action('ReviewController@approved', $review->id)}}" method="POST">
+@csrf
+<button>Approve</button>
+</form>
+@endif
+@endcan
+<hr>
+@endforeach --}}
+
+{{-- tu --}}
 <script src="{{ mix('js/Header.js') }}"></script>
-@endsection
+<script src="{{ asset('js/ajax_vanillajs.js') }}"></script>
 
+@endsection
