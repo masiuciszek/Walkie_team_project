@@ -1,0 +1,43 @@
+//responsive design breakpoints
+// Small tablets and large smartphones (landscape view)
+$screen-sm-max: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+
+
+//Font sizes
+$h1: 4rem;
+$h1-sm: 2.5rem;
+$h2: 2rem;
+$p: 1.5rem;
+$p-sm: 1.1rem;
+$h1-gallery: 5rem;
+$dog-description-info: 1.1rem;
+$dog-description: 1.3rem;
+$btn-big: 1rem;
+
+//paddings
+$homepage-content-padding: 2rem;
+$homepage-content-padding-sm: 2rem;
+$homepage-content-padding-md: 1rem;
+$gallery-header-padding: 4rem;
+$detail-description-padding: 1rem;
+
+//margins
+$margin-btn-gallery: 3rem;
+$padding-btn-gallery: 1rem;
+$margin-dog-description: 1rem;
+$margin-dog-detail-name: -2.5rem;
+//text-styling properties
+$line-height: 2.2rem;
+
+//buttons styling properties
+$btn-padding: 10rem;

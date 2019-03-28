@@ -1,6 +1,14 @@
+@import './details/_mixins';
+@import './details/_sizes';
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+
+//Main page
+@import  './main_page/components/content';
+
+//Navbar
+@import './main_page/components/navbar';
 
 //Header
 @import './header/navbar';
@@ -13,6 +21,12 @@
 
 //Admin
 @import './admin_profile/admin_profile';
+
+//header in gallery
+@import './dogs/dogs_gallery_header';
+
+//Dog-gallery
+@import './dogs/dogs_gallery';
 
 //Dog-detail
 @import './dogs/dog_detail';

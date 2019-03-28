@@ -3,20 +3,15 @@
 @section('content')
 
 
-<h1 class="user-title">Welcome</h1>
-{{-- <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="jumbotron" id="user_info_container">
-                <div class="card">
-                    <div class="card-body" id="user-info-card"> --}}
+<h1 class="user-title">Welcome {{$auth->first_name}} {{$auth->last_name}} </h1>
+
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="jumbotron" id="user_info_container">
                     <div class="card">
                             @if ($auth->admin == true)
-                            <button class="btn btn-info text-white"><a href="{{ url('dog/create') }}">Manage the dogs</a></button>
+                            <a href="{{ url('dog/create') }}"><button class="btn btn-info text-white">Manage the dogs</button></a>
                             @endif
                 <div class="card-body" id="user-info-card">
                     <h3>{{$auth->first_name}} {{$auth->last_name}} </h3>

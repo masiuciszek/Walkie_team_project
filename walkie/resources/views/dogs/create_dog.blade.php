@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<div id="navbar"></div>
 
 
 @section('content')
@@ -66,7 +67,7 @@
 
         <div class="dogs-list-container col-md-5 ml-5">
             <h2 data-spy="scroll" >List of all the dogs:</h2>
-            <div class="card">
+            <div class="card" id="admin-card">
                 <div class="card-body">
                     <ol>
                         @foreach ($dogs as $dog)
@@ -99,3 +100,4 @@
     </div>
 </div>
 @endsection
+<script src="{{ mix('js/Header.js') }}"></script>

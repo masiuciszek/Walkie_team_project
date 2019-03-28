@@ -64,25 +64,30 @@ btnDown.forEach(btn => {
         btn.disabled = true;
     });
 })
+// 
 
 
-const datesInputCalander = document.querySelector('#walking');
-const submitTimes = document.querySelectorAll('.submit-time');
 
-datesInputCalander.addEventListener('change', (e) => {
-    console.log(e.target.value);
-    const date = e.target.value;
-    const id = e.target.closest('form').dataset.dogid;
-    console.log(id)
-    fetchUrl(`/api/walk/${id}/time/${date}`,
-        JSON.stringify({
-            _token: csrfToken,
-            walk: e.target.value
-        }),
-        (response) => {
-            console.log('Success:', response);
-        }, 'get');
-  });
+
+
+
+// const datesInputCalander = document.querySelector('#walking');
+// const submitTimes = document.querySelectorAll('.submit-time');
+
+// datesInputCalander.addEventListener('change', (e) => {
+//     console.log(e.target.value);
+//     const date = e.target.value;
+//     const id = e.target.closest('form').dataset.dogid;
+//     console.log(id)
+//     fetchUrl(`/api/walk/${id}/time/${date}`,
+//         JSON.stringify({
+//             _token: csrfToken,
+//             walk: e.target.value
+//         }),
+//         (response) => {
+//             console.log('Success:', response);
+//         }, 'get');
+//   });
 
 
 
