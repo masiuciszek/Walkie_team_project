@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "@material-ui/core": "^3.9.2",
+        "react-spring": "^8.0.18",
         "react-strap": "0.0.1",
         "reactstrap": "^7.1.0",
         "semantic-ui-css": "^2.4.1"

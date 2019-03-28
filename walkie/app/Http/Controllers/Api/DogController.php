@@ -48,29 +48,35 @@ class DogController extends Controller
         $dog = Dog::findOrFail($id);
         $walks = Walk::where('dog_id', $dog->id)->day($date)->get();
 
-        if (\Gate::allows('admin')){
-            $reviews = Review::where('dog_id', $dog->id)->get();
-        }else{
-            $reviews = Review::where('dog_id', $dog->id)->where('approved', true)->get();
-        }
+        // if (\Gate::allows('admin')){
+        //     $reviews = Review::where('dog_id', $dog->id)->get();
+        // }else{
+        //     $reviews = Review::where('dog_id', $dog->id)->where('approved', true)->get();
+        // }
 
         $hours_taken = [];
         foreach ($walks as $walk) {
-            $hours_taken[$walk->hour] = true;
+            $hours_taken[] = $walk->hour;
         }
 
         $hours = Walk::getHoursForDay($date);
-        return response()->json(compact('walks','dog', 'walks','date'));
+
+        $available_hours = array_diff($hours , $hours_taken);
+
+
+        // return response()->json(compact('walks','dog', 'walks','date'));
+        return $available_hours;
     }
 
     public function bookTime(Request $request, $id)
     {
         $walks = Walk::all();
-        // if($walks  )
+
+
     }
     /**
      * Display a listing of the resource.
-     *
+     *sdad
      * @return \Illuminate\Http\Response
      */
     public function index()
