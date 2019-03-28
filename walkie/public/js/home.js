@@ -42798,7 +42798,7 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/masiuciszek/Documents/web_dev/Walkie_team_project/walkie/resources/js/homepage/index.js */"./resources/js/homepage/index.js");
+module.exports = __webpack_require__(/*! /Users/marte/web/Walkie_team_project/walkie/resources/js/homepage/index.js */"./resources/js/homepage/index.js");
 
 
 /***/ })
