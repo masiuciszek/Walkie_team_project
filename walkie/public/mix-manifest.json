@@ -1,8 +1,9 @@
-{
-    "/js/Header.js": "/js/Header.js?id=58466e130f8b2c2b4104",
+    "/js/modals.js": "/js/modals.js?id=bb7dba265bc4bee35e5c"
+=======
+    "/js/Header.js": "/js/Header.js?id=a99bdb644903bccef31f",
     "/js/Home.js": "/js/Home.js?id=1f02135fb28f5a8a2003",
     "/js/list-of-dogs.js": "/js/list-of-dogs.js?id=526963f6a8ae6cddb634",
     "/css/app.css": "/css/app.css?id=df6087bed85a41e78169",
-    "/js/modals.js": "/js/modals.js?id=af7c79d387c3d7023524"
+
 >>>>>>> c22de7ed1e51e4b9c0f942a1b9fdcdb8dc796fb1
 }
