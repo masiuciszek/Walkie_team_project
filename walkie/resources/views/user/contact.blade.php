@@ -52,7 +52,7 @@
 
               </div>
               <div class="form-group">
-                <label>Why would you like to adops this dog?</label>
+                <label>Why would you like to adopt this dog?</label>
                 <textarea name="message" class="form-control">{{old('message')}}</textarea>
               </div>
               <div class="form-group">
