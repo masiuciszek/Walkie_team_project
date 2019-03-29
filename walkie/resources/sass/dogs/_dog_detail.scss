@@ -13,6 +13,18 @@
     text-align: center;
     padding: $detail-description-padding;
 }
+.btn-detail{
+    display: flex; 
+    
+    .btn-adopt {
+        margin: 0 auto;
+        
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
 
 .fas.fa-paw {
     color: rgba(108, 178, 235, 0.5);
@@ -87,7 +99,7 @@
 }
 
 .review-top-line {
-    margin-top: -1rem;
+    margin-top: -0.5rem;
 }
 
 .btn-flex {
@@ -110,6 +122,7 @@
     
     .comment-top-section {
         display: flex;
+        justify-content: space-between;
         .review-name{
             font-size: 1.2rem;
             margin-right: 2rem;
@@ -124,6 +137,10 @@
             border: none;
         }
     }
+}
+
+.name-date-review{
+    display: flex;
 }
 
 .admin-btns-review {
@@ -143,13 +160,17 @@
 
 
 .review-txt {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin: 1rem 0;
     padding: 1.5rem;
     border-radius: 1rem;
     background-color:rgba(108, 178, 235, 0.349); 
 }
 
+.votes {
+    margin-bottom: -1.5rem;
+}
+
 .hr-comment-line {
-    margin: 3rem;
+    margin: 2rem;
 }

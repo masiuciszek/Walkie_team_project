@@ -14,10 +14,7 @@
   padding: 2rem;
   border-radius: 5rem;
   margin-top: 2rem;
-  background: rgba(255, 255, 255, 0);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(199, 209, 228, 0.54)), color-stop(73%, rgba(173, 188, 215, 0.54)));
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(199, 209, 228, 0.54) 50%, rgba(173, 188, 215, 0.54) 73%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#ffffff", endColorstr="#adbcd7", GradientType=0 );
+  background-color: rgba(255, 255, 255, 0.39);
 }
 
 #home .walkie.text-center > h1 {
@@ -235,6 +232,19 @@
   padding: 1rem;
 }
 
+.btn-detail {
+  display: flex;
+}
+
+.btn-detail .btn-adopt {
+  margin: 0 auto;
+}
+
+.btn-detail .btn-adopt a {
+  text-decoration: none;
+  color: white;
+}
+
 .fas.fa-paw {
   color: rgba(108, 178, 235, 0.5);
   margin: 0 0.5rem;
@@ -303,7 +313,7 @@
 }
 
 .review-top-line {
-  margin-top: -1rem;
+  margin-top: -0.5rem;
 }
 
 .btn-flex {
@@ -327,6 +337,7 @@
 
 .review-card .comment-top-section {
   display: flex;
+  justify-content: space-between;
 }
 
 .review-card .comment-top-section .review-name {
@@ -341,6 +352,10 @@
 
 .review-card .votes-thumbs-container .btn-dislike {
   border: none;
+}
+
+.name-date-review {
+  display: flex;
 }
 
 .admin-btns-review {
@@ -362,15 +377,19 @@
 }
 
 .review-txt {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin: 1rem 0;
   padding: 1.5rem;
   border-radius: 1rem;
   background-color: rgba(108, 178, 235, 0.349);
 }
 
+.votes {
+  margin-bottom: -1.5rem;
+}
+
 .hr-comment-line {
-  margin: 3rem;
+  margin: 2rem;
 }
 
 [type=date] {

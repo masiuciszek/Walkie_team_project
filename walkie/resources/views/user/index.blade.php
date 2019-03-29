@@ -10,9 +10,6 @@
             <div class="col-md-6">
                 <div class="jumbotron" id="user_info_container">
                     <div class="card">
-                            @if ($auth->admin == true)
-                            <a href="{{ url('dog/create') }}"><button class="btn btn-info text-white">Manage the dogs</button></a>
-                            @endif
                 <div class="card-body" id="user-info-card">
                     <h3>{{$auth->first_name}} {{$auth->last_name}} </h3>
                     <p>{{$auth->user_name}}</p>
@@ -21,6 +18,9 @@
                     <p>{{$auth->age}}</p>
                     <p>{{$auth->gender}}</p>
                     <a href="{{action('UserController@edit',$auth->id)}}" class="btn btn-danger">Update Profile</a>
+                    @if ($auth->admin == true)
+                    <a href="{{ url('dog/create') }}"><button class="btn btn-info text-white">Admin profile</button></a>
+                    @endif
                     </div>
                 </div>
             </div>
