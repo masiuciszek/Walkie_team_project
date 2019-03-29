@@ -29311,15 +29311,9 @@ var EXITING = 'exiting';
  * stay there for 500ms (the value of `timeout`) before it finally switches to `'entered'`.
  *
  * When `in` is `false` the same thing happens except the state moves from `'exiting'` to `'exited'`.
-<<<<<<< HEAD
  *
  * ## Timing
  *
-=======
- *
- * ## Timing
- *
->>>>>>> feat/last_day_masiu
  * Timing is often the trickiest part of animation, mistakes can result in slight delays
  * that are hard to pin down. A common example is when you want to add an exit transition,
  * you should set the desired final styles when the state is `'exiting'`. That's when the
@@ -30052,19 +30046,11 @@ module.exports = exports["default"];
 
 
 var _CSSTransition = _interopRequireDefault(__webpack_require__(/*! ./CSSTransition */ "./node_modules/react-transition-group/CSSTransition.js"));
-<<<<<<< HEAD
 
 var _ReplaceTransition = _interopRequireDefault(__webpack_require__(/*! ./ReplaceTransition */ "./node_modules/react-transition-group/ReplaceTransition.js"));
 
 var _TransitionGroup = _interopRequireDefault(__webpack_require__(/*! ./TransitionGroup */ "./node_modules/react-transition-group/TransitionGroup.js"));
 
-=======
-
-var _ReplaceTransition = _interopRequireDefault(__webpack_require__(/*! ./ReplaceTransition */ "./node_modules/react-transition-group/ReplaceTransition.js"));
-
-var _TransitionGroup = _interopRequireDefault(__webpack_require__(/*! ./TransitionGroup */ "./node_modules/react-transition-group/TransitionGroup.js"));
-
->>>>>>> feat/last_day_masiu
 var _Transition = _interopRequireDefault(__webpack_require__(/*! ./Transition */ "./node_modules/react-transition-group/Transition.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -42812,11 +42798,7 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 module.exports = __webpack_require__(/*! /Users/marte/web/Walkie_team_project/walkie/resources/js/homepage/index.js */"./resources/js/homepage/index.js");
-=======
-module.exports = __webpack_require__(/*! /Users/masiuciszek/Documents/web_dev/Walkie_team_project/walkie/resources/js/homepage/index.js */"./resources/js/homepage/index.js");
->>>>>>> feat/last_day_masiu
 
 
 /***/ })

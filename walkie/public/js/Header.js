@@ -40163,11 +40163,7 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 module.exports = __webpack_require__(/*! /Users/marte/web/Walkie_team_project/walkie/resources/js/navbar/index.js */"./resources/js/navbar/index.js");
-=======
-module.exports = __webpack_require__(/*! /Users/masiuciszek/Documents/web_dev/Walkie_team_project/walkie/resources/js/navbar/index.js */"./resources/js/navbar/index.js");
->>>>>>> feat/last_day_masiu
 
 
 /***/ })

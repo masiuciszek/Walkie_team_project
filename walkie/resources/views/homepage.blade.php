@@ -13,7 +13,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Walkie</title>
 
         <!-- Fonts -->
     <link href="{{ mix('css/app.css')}}" rel="stylesheet" type="text/css">

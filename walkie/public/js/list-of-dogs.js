@@ -28392,8 +28392,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./node_modules/react-spring/renderprops.js":
 /*!**************************************************!*\
   !*** ./node_modules/react-spring/renderprops.js ***!
@@ -30422,7 +30420,6 @@ exports.Globals = Globals;
 
 /***/ }),
 
->>>>>>> feat/last_day_masiu
 /***/ "./node_modules/react-transition-group/CSSTransition.js":
 /*!**************************************************************!*\
   !*** ./node_modules/react-transition-group/CSSTransition.js ***!
@@ -31007,15 +31004,9 @@ var EXITING = 'exiting';
  * stay there for 500ms (the value of `timeout`) before it finally switches to `'entered'`.
  *
  * When `in` is `false` the same thing happens except the state moves from `'exiting'` to `'exited'`.
-<<<<<<< HEAD
  *
  * ## Timing
  *
-=======
- *
- * ## Timing
- *
->>>>>>> feat/last_day_masiu
  * Timing is often the trickiest part of animation, mistakes can result in slight delays
  * that are hard to pin down. A common example is when you want to add an exit transition,
  * you should set the desired final styles when the state is `'exiting'`. That's when the
@@ -43564,13 +43555,8 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 __webpack_require__(/*! /Users/marte/web/Walkie_team_project/walkie/resources/js/list-of-dogs/index.js */"./resources/js/list-of-dogs/index.js");
 module.exports = __webpack_require__(/*! /Users/marte/web/Walkie_team_project/walkie/resources/sass/app.scss */"./resources/sass/app.scss");
-=======
-__webpack_require__(/*! /Users/masiuciszek/Documents/web_dev/Walkie_team_project/walkie/resources/js/list-of-dogs/index.js */"./resources/js/list-of-dogs/index.js");
-module.exports = __webpack_require__(/*! /Users/masiuciszek/Documents/web_dev/Walkie_team_project/walkie/resources/sass/app.scss */"./resources/sass/app.scss");
->>>>>>> feat/last_day_masiu
 
 
 /***/ })

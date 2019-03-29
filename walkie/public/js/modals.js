@@ -104,11 +104,7 @@ console.log('Modal windows being initialized');
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 module.exports = __webpack_require__(/*! /Users/marte/web/Walkie_team_project/walkie/resources/js/modals/index.js */"./resources/js/modals/index.js");
-=======
-module.exports = __webpack_require__(/*! /Users/masiuciszek/Documents/web_dev/Walkie_team_project/walkie/resources/js/modals/index.js */"./resources/js/modals/index.js");
->>>>>>> feat/last_day_masiu
 
 
 /***/ })
