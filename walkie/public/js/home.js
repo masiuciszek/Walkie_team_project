@@ -401,7 +401,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.walkie h1{\n    font-size: 3rem;\n    padding: .6rem;\n}\n.walkie p{\n    font-size: 1.3rem;\n    padding: 1rem;\n}\n\n@media(min-width: 600px){\n    .nav-hamburger{\n\n        display: none;\n    }\n}\n\n", ""]);
+exports.push([module.i, "/* \n.walkie h1{\n    font-size: 3rem;\n    padding: .6rem;\n}\n.walkie p{\n    font-size: 1.3rem;\n    padding: 1rem;\n}\n\n@media(min-width: 600px){\n    .nav-hamburger{\n\n        display: none;\n    }\n}\n */\n", ""]);
 
 // exports
 
@@ -42350,11 +42350,8 @@ var Hero = function Hero(_ref) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, hero), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, text), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "/dog"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-    outline: true,
     color: "success"
-  }, "Visit", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "angle right icon"
-  }))));
+  }, "Visit")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Hero);
@@ -42452,7 +42449,7 @@ function (_Component) {
           style: props
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Container"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Hero__WEBPACK_IMPORTED_MODULE_2__["default"], {
           hero: "Walkie",
-          text: "Doggo ipsum woof woof Doggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woof"
+          text: "Ever thought about getting a dog? Seems like you are in a right place! Why shop when you can rescue? All of our pups are ready to settle down with new, loving families! As soon as they arrive to our shelter we start to train them so you won\u2019t have to! Maybe you love dogs but for some reasons can\u2019t own one? No problem! Our shelter gives you the possibility to take a pup for a walk, it\u2019s as easy as pie! All you have to do is reserve one and enjoy the company of one of our dogs."
         })));
       }));
     }
@@ -42538,7 +42535,7 @@ function (_React$Component) {
         className: this.props.className
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalHeader"], {
         toggle: this.toggle
-      }, this.props.modalHeader), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalBody"], null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalFooter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      }, this.props.modalHeader), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalBody"], null, "To adopt our puppies, or to take them for a walk you need to be registered. If you don't have an account you can register. It's free and it will bring you joy! If you are registered you can log in!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalFooter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         color: "info",
         href: "/login",
         onClick: this.toggle
@@ -42629,7 +42626,7 @@ function (_React$Component) {
         className: this.props.className
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalHeader"], {
         toggle: this.toggle
-      }, this.props.modalHeader), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalBody"], null, "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalFooter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      }, this.props.modalHeader), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalBody"], null, "Here you can create your account. It's free and without it you can't adopt a puppy or even take it for a walk. Create an account, it's worth it!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalFooter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         color: "warning",
         href: "/register",
         onClick: this.toggle

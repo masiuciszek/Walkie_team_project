@@ -3,25 +3,14 @@
 @section('content')
 
 
-<h1 class="user-title">Welcome</h1>
-<<<<<<< HEAD
+<h1 class="user-title">Welcome {{$auth->first_name}} {{$auth->last_name}} </h1>
+
     <div class="container">
-        @if ($auth->admin == true)
-        <button class="btn btn-info text-white" {{ url('dog/create') }}>Manage the dogs</button>
-        @endif
-
-        <div class="jumbotron" id="user_info_container">
-            <div class="card">
-                <div class="card-body">
-=======
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="jumbotron" id="user_info_container">
-                <div class="card">
-                    <div class="card-body" id="user-info-card">
->>>>>>> c22de7ed1e51e4b9c0f942a1b9fdcdb8dc796fb1
+        <div class="row">
+            <div class="col-md-6">
+                <div class="jumbotron" id="user_info_container">
+                    <div class="card">
+                <div class="card-body" id="user-info-card">
                     <h3>{{$auth->first_name}} {{$auth->last_name}} </h3>
                     <p>{{$auth->user_name}}</p>
                     <p>{{$auth->email}}</p>
@@ -29,6 +18,9 @@
                     <p>{{$auth->age}}</p>
                     <p>{{$auth->gender}}</p>
                     <a href="{{action('UserController@edit',$auth->id)}}" class="btn btn-danger">Update Profile</a>
+                    @if ($auth->admin == true)
+                    <a href="{{ url('dog/create') }}"><button class="btn btn-info text-white">Admin profile</button></a>
+                    @endif
                     </div>
                 </div>
             </div>

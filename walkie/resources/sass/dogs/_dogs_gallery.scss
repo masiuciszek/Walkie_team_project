@@ -1,0 +1,28 @@
+.card-dogs-gallery {
+    height: 45rem;
+    -webkit-box-shadow: 5px 6px 22px 0px rgba(0,0,0,0.61);
+    -moz-box-shadow: 5px 6px 22px 0px rgba(0,0,0,0.61);
+    box-shadow: 5px 6px 22px 0px rgba(0,0,0,0.61);   
+
+    .card-title {
+        font-size: $h2;
+    }
+
+    .card-text {
+        font-size: $p-sm;
+    }
+
+    .card-btn {
+        margin: 0 auto;
+        margin-bottom: $margin-btn-gallery;
+        padding: $padding-btn-gallery;
+        border-radius: 1rem;
+        
+    } .card-btn > p {
+        font-size: 1rem;
+    }
+
+    .dog-description-gallery {
+        margin-top: $margin-dog-description;
+    }
+}

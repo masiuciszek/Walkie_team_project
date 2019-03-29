@@ -1,13 +1,13 @@
 
 {{-- @extends('layouts.app') --}}
-<div id="home"></div>
-
-<script src="{{ mix('js/Home.js') }}"></script>
 
 
 
 
-{{-- <!doctype html>
+
+
+
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -16,11 +16,13 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+    <link href="{{ mix('css/app.css')}}" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
     </head>
-    <body> --}}
+    <body>
+            <div id="home"></div>
+            <script src="{{ mix('js/Home.js') }}"></script>
 
-    {{-- </body>
-</html> --}}
+    </body>
+</html>

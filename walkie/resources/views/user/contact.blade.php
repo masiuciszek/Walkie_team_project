@@ -25,7 +25,7 @@
   <div class="jumbotron">
       <div class="card">
         <div class="card-body">
-          <h3 class="contact-title">Contact</h3>
+          <h3 class="contact-title">Adopt a dog form contact</h3>
           <form action=""{{action('UserController@send')}} method="post">
           @csrf
               <div class="form-group">

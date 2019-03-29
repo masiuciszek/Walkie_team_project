@@ -44,7 +44,7 @@ export default class Home extends Component {
             <Container>
               <Hero
                 hero='Walkie'
-                text='Doggo ipsum woof woof Doggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woofDoggo ipsum woof woof'
+                text='Ever thought about getting a dog? Seems like you are in a right place! Why shop when you can rescue? All of our pups are ready to settle down with new, loving families! As soon as they arrive to our shelter we start to train them so you won’t have to! Maybe you love dogs but for some reasons can’t own one? No problem! Our shelter gives you the possibility to take a pup for a walk, it’s as easy as pie! All you have to do is reserve one and enjoy the company of one of our dogs.'
               />
 
             </Container>
