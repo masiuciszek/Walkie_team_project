@@ -7,7 +7,7 @@ const Hero = ({hero,text}) => (
             <h1>{hero}</h1>
             <p>{text}</p>
             <a href="/dog">
-                <Button color="success">Visit
+                <Button color="success" className="btn-lg">Visit
                 {/* <i className="angle right icon">
                 </i> */}
                 </Button>

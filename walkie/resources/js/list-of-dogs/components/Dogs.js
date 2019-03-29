@@ -2,9 +2,10 @@ console.log('it works')
 import React from 'react';
 import axios from 'axios';
 import { Container, Row, Col, Button } from 'reactstrap';
-
 import { Card, CardImg, CardText, CardBody,
     CardTitle } from 'reactstrap';
+    import { Spring } from 'react-spring/renderprops'
+
 
 class Dogs extends React.Component{
     constructor(){
@@ -80,6 +81,7 @@ class Dogs extends React.Component{
     render(){
         return(
             <div>
+
                 <Container>
                 <Row>
 

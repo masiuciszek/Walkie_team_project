@@ -25,8 +25,10 @@ const btnUp = document.querySelectorAll('.btn-up');
 const btnDown = document.querySelectorAll('.btn-down');
 const csrfToken = document.getElementById('csrf-token').content;
 
+
 btnUp.forEach(btn => {
     btn.addEventListener('click', (e) => {
+        btnDown.forEach(btn =>  btn.disabled = true );
         e.preventDefault();
         btn.style.color = 'steelblue';
         const id = e.target.closest('form').dataset.reviewid;
@@ -47,6 +49,7 @@ btnUp.forEach(btn => {
 
 btnDown.forEach(btn => {
     btn.addEventListener('click', (e) => {
+        btnUp.forEach(btn =>  btn.disabled = true );
         e.preventDefault();
         btn.style.color = 'tomato';
         const id = e.target.closest('form').dataset.reviewid;
@@ -64,7 +67,7 @@ btnDown.forEach(btn => {
         btn.disabled = true;
     });
 })
-// 
+//
 
 
 

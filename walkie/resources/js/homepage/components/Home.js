@@ -35,9 +35,9 @@ export default class Home extends Component {
         />
 
       <Spring
-        from={{ opacity:0 }}
-        to={{ opacity:1 }}
-        config={{duration:2000}}
+        from={{ opacity:0, textShadow:'0px 0px 4px #fff' }}
+        to={{ opacity:1, textShadow:'1px 1px 1px #ccc' }}
+      config={{duration:2400}}
         >
         {props => (
           <div style={props}>
